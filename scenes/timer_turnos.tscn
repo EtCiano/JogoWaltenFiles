@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://65gpd1mq5l3s"]
+
+[ext_resource type="Script" uid="uid://crnjyc7iuh2bq" path="res://scripts/timer_turnos.gd" id="1_5nip1"]
+
+[node name="timerTurnos" type="Timer" unique_id=1463925944]
+one_shot = true
+autostart = true
+script = ExtResource("1_5nip1")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
