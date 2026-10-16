@@ -38,8 +38,7 @@ var portasAbertas = {
 
 var posicaoBon = 8
 
-func _ready() -> void:
-	print("bon -> ", posicaoBon)
+var continuar = false
 
 func andarBon() -> void:
 	var possiveisLocais = locais[posicaoBon].duplicate(true)
@@ -52,8 +51,11 @@ func andarBon() -> void:
 	posicaoBon = escolher_ponderado(possiveisLocais, Array(range(possiveisLocais.size())))
 	print("bon -> ", posicaoBon)
 	
-	
-	
+func iniciar_jogo() -> void:
+	print("bon -> ", posicaoBon)
+	continuar = true
+	TimerNoite.iniciar()
+	TimerTurnos.iniciar()
 	
 	
 	

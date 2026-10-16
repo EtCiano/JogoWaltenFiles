@@ -5,16 +5,15 @@ var horasPassadas = 0
 const horaFinal = 6
 
 func iniciar() -> void:
-	print(horasPassadas, " AM")
 	if horasPassadas == horaFinal:
-		TimerTurnos.continuar = false
+		Global.continuar = false
 		if !TimerTurnos.is_stopped():
 			TimerTurnos.stop()
 		return
-	start(intervalo)
-	
-func _ready() -> void:
-	iniciar()
+		
+	if Global.continuar:
+		print(horasPassadas, " AM")
+		start(intervalo)
 
 func _on_timeout() -> void:
 	horasPassadas += 1

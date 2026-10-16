@@ -1,0 +1,14 @@
+extends TextureRect
+
+func _ready() -> void:
+	Global.iniciar_jogo()
+
+
+func _on_fechar_esquerda_pressed() -> void:
+	Global.portasAbertas[-1] = !Global.portasAbertas[-1]
+	print('porta Esq. ', Global.portasAbertas[-1])
+
+
+func _on_fechar_direita_pressed() -> void:
+	Global.portasAbertas[-2] = !Global.portasAbertas[-2]
+	print('porta Esq. ', Global.portasAbertas[-2])

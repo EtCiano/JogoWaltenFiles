@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://dlbc3f4qxo44f"]
+
+[ext_resource type="FontFile" uid="uid://bs8306aa3k2xc" path="res://resources/Square.ttf" id="1_kdnec"]
+[ext_resource type="StyleBox" uid="uid://7hiw60km1x8u" path="res://themes/doorButtonThemeNormal.tres" id="2_d7dso"]
+
+[resource]
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("1_kdnec")
+Button/styles/hover = ExtResource("2_d7dso")
+Button/styles/normal = ExtResource("2_d7dso")

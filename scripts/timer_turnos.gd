@@ -1,25 +1,21 @@
 extends Timer
 
-var tempoAcrescimo : int = 0
-const tempoTotal = 10
-const acrescimoTotal = 0
+var tempoAcrescimo : int = 0 # 56 
+const tempoTotal = 10 		 # 30
+const acrescimoTotal = 0 	 # 10
 var quantTurnos = 0
-var continuar = true
 
 func iniciar() -> void:
-	if continuar:
-		start(tempoTotal + tempoAcrescimo)
-		print("turno #", quantTurnos, " Iniciado ", "(", tempoTotal + tempoAcrescimo, " = ", tempoTotal, " + ", tempoAcrescimo, ")")
-
-func _ready() -> void:
-	iniciar()
+	start(tempoTotal + tempoAcrescimo)
+	print("turno #", quantTurnos, " Iniciado ", "(", tempoTotal + tempoAcrescimo, " = ", tempoTotal, " + ", tempoAcrescimo, ")")
 
 func _on_timeout() -> void:
-	quantTurnos += 1
-	
-	Global.andarBon()
-	if Global.posicaoBon == -4:
-		continuar = false
-	
-	tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
-	iniciar()
+	if Global.continuar:
+		quantTurnos += 1
+		
+		Global.andarBon()
+		if Global.posicaoBon == -4:
+			Global.continuar = false
+		
+		tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
+		iniciar()
