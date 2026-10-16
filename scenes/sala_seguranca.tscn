@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e324d7eiven1" path="res://scripts/sala_seguranca.gd" id="1_w1ner"]
 [ext_resource type="Theme" uid="uid://dlbc3f4qxo44f" path="res://themes/doorButtonTheme.tres" id="2_4exue"]
+[ext_resource type="Texture2D" uid="uid://bfal0lppm24fp" path="res://resources/setaCima.png" id="3_p5qe1"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 anchors_preset = 15
@@ -41,6 +42,24 @@ grow_vertical = 2
 theme = ExtResource("2_4exue")
 text = "Fechar
 Direita"
+
+[node name="Button" type="Button" parent="." unique_id=247583579]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -153.0
+offset_right = 512.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_4exue")
+icon = ExtResource("3_p5qe1")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_esquerda_pressed"]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_direita_pressed"]

@@ -3,8 +3,18 @@
 [ext_resource type="FontFile" uid="uid://bs8306aa3k2xc" path="res://resources/Square.ttf" id="1_kdnec"]
 [ext_resource type="StyleBox" uid="uid://7hiw60km1x8u" path="res://themes/doorButtonThemeNormal.tres" id="2_d7dso"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7dso"]
+bg_color = Color(0.6, 0.6, 0.6, 0.09803922)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5409904, 0.54099053, 0.5409902, 1)
+
 [resource]
+Button/constants/icon_max_width = 128
 Button/font_sizes/font_size = 38
 Button/fonts/font = ExtResource("1_kdnec")
 Button/styles/hover = ExtResource("2_d7dso")
 Button/styles/normal = ExtResource("2_d7dso")
+Button/styles/pressed = SubResource("StyleBoxFlat_d7dso")
