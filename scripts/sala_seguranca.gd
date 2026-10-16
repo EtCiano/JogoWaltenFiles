@@ -21,3 +21,7 @@ func _on_timer_tutorial_timeout() -> void:
 	await tween.finished
 	$FecharDireita.self_modulate.a = 0
 	$FecharEsquerda.self_modulate.a = 0
+
+
+func _on_abrir_camera_mouse_entered() -> void:
+	pass # abrir a camerinha
