@@ -1,9 +1,5 @@
 extends TextureRect
 
-func _ready() -> void:
-	Global.iniciar_jogo()
-
-
 func _on_fechar_esquerda_pressed() -> void:
 	Global.portasAbertas[-1] = !Global.portasAbertas[-1]
 	print('porta Esq. ', Global.portasAbertas[-1])
@@ -11,7 +7,7 @@ func _on_fechar_esquerda_pressed() -> void:
 
 func _on_fechar_direita_pressed() -> void:
 	Global.portasAbertas[-2] = !Global.portasAbertas[-2]
-	print('porta Esq. ', Global.portasAbertas[-2])
+	print('porta Dir. ', Global.portasAbertas[-2])
 
 
 func _on_timer_tutorial_timeout() -> void:
@@ -23,5 +19,5 @@ func _on_timer_tutorial_timeout() -> void:
 	$FecharEsquerda.self_modulate.a = 0
 
 
-func _on_abrir_camera_mouse_entered() -> void:
-	pass # abrir a camerinha
+func _on_abrir_camera_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/camera.tscn")

@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://dwn203124swvh"]
+
+[ext_resource type="FontFile" uid="uid://bs8306aa3k2xc" path="res://resources/Square.ttf" id="1_tvwri"]
+[ext_resource type="StyleBox" uid="uid://vnv0vh2b8pvw" path="res://themes/cameraButtonNormal.tres" id="2_y7jhv"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 31
+Button/fonts/font = ExtResource("1_tvwri")
+Button/styles/hover = ExtResource("2_y7jhv")
+Button/styles/normal = ExtResource("2_y7jhv")
+Button/styles/pressed = ExtResource("2_y7jhv")
+Label/font_sizes/font_size = 95
+Label/fonts/font = ExtResource("1_tvwri")

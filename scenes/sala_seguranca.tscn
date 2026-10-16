@@ -23,7 +23,7 @@ offset_right = 281.0
 offset_bottom = 128.0
 grow_vertical = 2
 theme = ExtResource("2_4exue")
-text = "Fechar 
+text = "porta 
 Esquerda"
 
 [node name="FecharDireita" type="Button" parent="." unique_id=666973430]
@@ -40,7 +40,7 @@ offset_bottom = 128.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_4exue")
-text = "Fechar
+text = "Porta
 Direita"
 
 [node name="AbrirCamera" type="Button" parent="." unique_id=247583579]
@@ -68,5 +68,5 @@ autostart = true
 
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_esquerda_pressed"]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_direita_pressed"]
-[connection signal="mouse_entered" from="AbrirCamera" to="." method="_on_abrir_camera_mouse_entered"]
+[connection signal="pressed" from="AbrirCamera" to="." method="_on_abrir_camera_pressed"]
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
