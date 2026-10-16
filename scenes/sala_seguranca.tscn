@@ -43,7 +43,7 @@ theme = ExtResource("2_4exue")
 text = "Fechar
 Direita"
 
-[node name="Button" type="Button" parent="." unique_id=247583579]
+[node name="AbrirCamera" type="Button" parent="." unique_id=247583579]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -61,5 +61,11 @@ icon = ExtResource("3_p5qe1")
 icon_alignment = 1
 expand_icon = true
 
+[node name="TimerTutorial" type="Timer" parent="." unique_id=164880972]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_esquerda_pressed"]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_direita_pressed"]
+[connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]

@@ -12,3 +12,12 @@ func _on_fechar_esquerda_pressed() -> void:
 func _on_fechar_direita_pressed() -> void:
 	Global.portasAbertas[-2] = !Global.portasAbertas[-2]
 	print('porta Esq. ', Global.portasAbertas[-2])
+
+
+func _on_timer_tutorial_timeout() -> void:
+	var tween = create_tween()
+	tween.tween_property($FecharDireita, "modulate:a", 0.0, 10)
+	tween.parallel().tween_property($FecharEsquerda, "modulate:a", 0.0, 10)
+	await tween.finished
+	$FecharDireita.self_modulate.a = 0
+	$FecharEsquerda.self_modulate.a = 0
