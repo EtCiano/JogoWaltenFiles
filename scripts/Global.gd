@@ -17,6 +17,22 @@ const locais = {
 	-4: [-4]
 }
 
+
+const locaisPesos = {
+	1: [2, 3, 1],
+	2: [1, 2, 2],
+	3: [1],
+	4: [1],
+	5: [1, 2],
+	6: [1, 2],
+	7: [1, 1, 2],
+	8: [1, 3],
+	-1: [1],
+	-2: [1],
+	-3: [1],
+	-4: [1]
+}
+
 var portasAbertas = {
 	-1: true,
 	-2: true
@@ -46,6 +62,7 @@ const poses = {
 var cameraAtual = 8
 
 var posicaoBon = 8
+var posicaoAnteriorBon = 8
 
 var continuar = false
 
@@ -66,11 +83,23 @@ func escolher_ponderado(itens: Array, pesos: Array) -> Variant:
 	return itens[-1]
 
 func andarBon() -> void:
+	print(posicaoAnteriorBon, " pos anterior")
 	var possiveisLocais = locais[posicaoBon].duplicate(true)
+	print(possiveisLocais, " locais antes")
+	var possiveisPesos = locaisPesos[posicaoBon].duplicate(true)
+	print(possiveisPesos, " pesos antes")
+	var indexAnterior: int
+	if posicaoAnteriorBon in possiveisLocais:
+		indexAnterior = possiveisLocais.find(posicaoAnteriorBon)
+		if possiveisLocais.size() > 1:
+			possiveisLocais.remove_at(indexAnterior)
+			possiveisPesos.remove_at(indexAnterior)
+	print(possiveisLocais, " locais depois")
+	print(possiveisPesos, " pesos depois")
 	if posicaoBon == -1 or posicaoBon == -2:
 		matarBon()
 		return
-	mudarPosBon(escolher_ponderado(possiveisLocais, Array(range(possiveisLocais.size()))))
+	mudarPosBon(escolher_ponderado(possiveisLocais, possiveisPesos))
 	
 func matarBon() -> void:
 	if portasAbertas[posicaoBon] == true:
@@ -88,6 +117,7 @@ func mostrarPosBon() -> void:
 	print("bon -> ", posicaoBon)
 	
 func mudarPosBon(novaPos) -> void:
+	posicaoAnteriorBon = 0+posicaoBon
 	posicaoBon = novaPos
 	mostrarPosBon()
 	bonMudarCamera.emit()

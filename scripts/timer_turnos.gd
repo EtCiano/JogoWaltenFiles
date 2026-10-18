@@ -19,3 +19,7 @@ func _on_timeout() -> void:
 		
 		tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
 		iniciar()
+
+
+func _on_timer_porta_timeout() -> void:
+	pass # Matar a pietra :X

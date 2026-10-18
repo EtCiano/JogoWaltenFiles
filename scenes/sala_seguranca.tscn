@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://e324d7eiven1" path="res://scripts/sala_seguranca.gd" id="1_w1ner"]
 [ext_resource type="Theme" uid="uid://dlbc3f4qxo44f" path="res://themes/doorButtonTheme.tres" id="2_4exue"]
 [ext_resource type="Texture2D" uid="uid://bfal0lppm24fp" path="res://resources/setaCima.png" id="3_p5qe1"]
+[ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 anchors_preset = 15
@@ -65,6 +66,9 @@ expand_icon = true
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="HorarioLabel" parent="." unique_id=1023385714 instance=ExtResource("4_vvx3o")]
+layout_mode = 0
 
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_esquerda_pressed"]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_direita_pressed"]

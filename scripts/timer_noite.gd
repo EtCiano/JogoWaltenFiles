@@ -1,7 +1,9 @@
 extends Timer
 
+signal mudarHorarioLabel()
+
 const intervalo = 86 # fnaf real dura isso n sei pq
-var horasPassadas = 0
+var horasPassadas = -1
 const horaFinal = 6
 
 func iniciar() -> void:
@@ -18,7 +20,4 @@ func iniciar() -> void:
 func _on_timeout() -> void:
 	horasPassadas += 1
 	iniciar()
-
-
-func _on_timer_porta_timeout() -> void:
-	pass # Matar a pietra
+	mudarHorarioLabel.emit()

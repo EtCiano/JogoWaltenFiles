@@ -7,4 +7,9 @@ one_shot = true
 autostart = true
 script = ExtResource("1_5nip1")
 
+[node name="TimerPorta" type="Timer" parent="." unique_id=1378762668]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="." to="." method="_on_timeout"]
+[connection signal="timeout" from="TimerPorta" to="." method="_on_timer_porta_timeout"]

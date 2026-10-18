@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cqunskemhl55i"]
+
+[ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="1_4dvek"]
+[ext_resource type="Script" uid="uid://b40ly7rexfry2" path="res://scripts/horario_label.gd" id="2_kq1qc"]
+
+[node name="HorarioLabel" type="Label" unique_id=1023385714]
+offset_right = 216.0
+offset_bottom = 100.0
+theme = ExtResource("1_4dvek")
+text = "12 AM"
+script = ExtResource("2_kq1qc")

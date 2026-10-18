@@ -4,7 +4,7 @@ func _on_fechar_camera_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/sala_seguranca.tscn")
 
 func _ready() -> void:
-	Global.bonMudarCamera.connect(_mudarCameraBon)
+	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	$LabelCamera.text = str(Global.cameraAtual)
 
 func _on_camera_pressed(camera: int) -> void:
@@ -17,7 +17,7 @@ func _on_camera_pressed(camera: int) -> void:
 	
 	$LabelCamera.text = str(camera)
 		
-func _mudarCameraBon() -> void:
+func _mudar_camera_bon() -> void:
 	if Global.cameraAtual == Global.posicaoBon:
 		$BonSprite.visible = true
 	else:

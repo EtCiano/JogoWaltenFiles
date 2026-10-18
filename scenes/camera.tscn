@@ -7,18 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://woromjcw3mlr" path="res://resources/mapaCamera.png" id="4_b05li"]
 [ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="5_p8nh0"]
 [ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="5_ys67x"]
+[ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="8_mq7sm"]
 
 [node name="camera" type="TextureRect" unique_id=268232031]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -540.0
-offset_right = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_b05li")
-stretch_mode = 4
+expand_mode = 2
 script = ExtResource("1_tmlye")
 
 [node name="FecharCamera" type="Button" parent="." unique_id=959269775]
@@ -144,15 +142,22 @@ theme = ExtResource("5_p8nh0")
 text = "2"
 
 [node name="LabelCamera" type="Label" parent="." unique_id=1622688640]
-layout_mode = 0
-offset_left = 1065.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -849.0
 offset_top = 50.0
-offset_right = 1315.0
+offset_right = -599.0
 offset_bottom = 216.0
+grow_horizontal = 0
 theme = ExtResource("5_p8nh0")
 text = "X"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="HorarioLabel" parent="." unique_id=1023385714 instance=ExtResource("8_mq7sm")]
+layout_mode = 0
 
 [connection signal="pressed" from="FecharCamera" to="." method="_on_fechar_camera_pressed"]
 [connection signal="pressed" from="TextureRect/Camera8" to="." method="_on_camera_pressed" binds= [8]]
