@@ -1,5 +1,9 @@
 extends TextureRect
 
+func _ready():
+	$Camera2D.ligar_botao($CameraLeftButton, Vector2.LEFT)
+	$Camera2D.ligar_botao($CameraRightButton, Vector2.RIGHT)
+
 func _on_fechar_esquerda_pressed() -> void:
 	Global.portasAbertas[-1] = !Global.portasAbertas[-1]
 	print('porta Esq. ', Global.portasAbertas[-1])

@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://jb6gxgdm0wlp"]
+
+[ext_resource type="StyleBox" uid="uid://dnmwovqavwa8a" path="res://themes/Camera2DThemeButtonNormal.tres" id="1_phsfo"]
+
+[resource]
+Button/styles/hover = ExtResource("1_phsfo")
+Button/styles/normal = ExtResource("1_phsfo")
+Button/styles/pressed = ExtResource("1_phsfo")

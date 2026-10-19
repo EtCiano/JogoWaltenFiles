@@ -13,7 +13,7 @@ border_color = Color(0.5409904, 0.54099053, 0.5409902, 1)
 
 [resource]
 Button/constants/icon_max_width = 128
-Button/font_sizes/font_size = 38
+Button/font_sizes/font_size = 56
 Button/fonts/font = ExtResource("1_kdnec")
 Button/styles/hover = ExtResource("2_d7dso")
 Button/styles/normal = ExtResource("2_d7dso")

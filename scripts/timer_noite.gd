@@ -3,7 +3,7 @@ extends Timer
 signal mudarHorarioLabel()
 
 const intervalo = 86 # fnaf real dura isso n sei pq
-var horasPassadas = -1
+var horasPassadas = 0
 const horaFinal = 6
 
 func iniciar() -> void:
