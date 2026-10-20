@@ -7,13 +7,48 @@
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 [ext_resource type="Script" uid="uid://c1ma5hrwrlyqm" path="res://scripts/camera_2d.gd" id="6_haxg8"]
 [ext_resource type="Theme" uid="uid://jb6gxgdm0wlp" path="res://themes/Camera2DThemeButton.tres" id="7_1c6gg"]
+[ext_resource type="Texture2D" uid="uid://cjuhnxad3p7hs" path="res://resources/portaAberta.png" id="9_nv23p"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
+z_index = -1
 offset_right = 2880.0
 offset_bottom = 1080.0
+pivot_offset = Vector2(1440, 540)
 texture = ExtResource("1_y27cn")
 stretch_mode = 2
 script = ExtResource("1_w1ner")
+
+[node name="portaEsq" type="TextureRect" parent="." unique_id=154753124]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -436.0
+offset_right = 303.0
+offset_bottom = 614.0
+grow_vertical = 2
+texture = ExtResource("9_nv23p")
+stretch_mode = 4
+
+[node name="portaDir" type="TextureRect" parent="." unique_id=72383616]
+z_index = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -433.0
+offset_right = 381.0
+offset_bottom = 613.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_nv23p")
+stretch_mode = 4
+flip_h = true
 
 [node name="TimerTutorial" type="Timer" parent="." unique_id=164880972]
 wait_time = 60.0

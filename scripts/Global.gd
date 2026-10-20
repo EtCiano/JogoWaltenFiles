@@ -2,17 +2,27 @@ extends Node
 
 signal bonMudarCamera()
 
+enum ESTADO {
+	aberto,
+	fechado
+}
+
+enum LADO {
+	esquerda = -1,
+	direita = -2
+}
+
 const locais = {
 	1: [2, 7, 3],
 	2: [8, 5, 1],
 	3: [1],
 	4: [7],
 	5: [2, 6],
-	6: [5, -1],
-	7: [1, 4, -2],
+	6: [5, LADO.esquerda],
+	7: [1, 4, LADO.direita],
 	8: [-3, 2],
-	-1: [6],
-	-2: [7],
+	LADO.esquerda: [6],
+	LADO.direita: [7],
 	-3: [8],
 	-4: [-4]
 }
@@ -27,15 +37,15 @@ const locaisPesos = {
 	6: [1, 2],
 	7: [1, 1, 2],
 	8: [1, 3],
-	-1: [1],
-	-2: [1],
+	LADO.esquerda: [1],
+	LADO.direita: [1],
 	-3: [1],
 	-4: [1]
 }
 
 var portasAbertas = {
-	-1: true,
-	-2: true
+	LADO.esquerda: ESTADO.aberto,
+	LADO.direita: ESTADO.aberto
 }
 
 const cameras = {
@@ -96,13 +106,13 @@ func andarBon() -> void:
 			possiveisPesos.remove_at(indexAnterior)
 	print(possiveisLocais, " locais depois")
 	print(possiveisPesos, " pesos depois")
-	if posicaoBon == -1 or posicaoBon == -2:
+	if posicaoBon == LADO.esquerda or posicaoBon == LADO.direita:
 		matarBon()
 		return
 	mudarPosBon(escolher_ponderado(possiveisLocais, possiveisPesos))
 	
 func matarBon() -> void:
-	if portasAbertas[posicaoBon] == true:
+	if portasAbertas[posicaoBon] == ESTADO.aberto:
 		mudarPosBon(-4)
 	else:
 		mudarPosBon(8)
@@ -121,4 +131,3 @@ func mudarPosBon(novaPos) -> void:
 	posicaoBon = novaPos
 	mostrarPosBon()
 	bonMudarCamera.emit()
-	
