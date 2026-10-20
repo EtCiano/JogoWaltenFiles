@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dykuclgmas0r8"]
+
+[ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="1_xo86m"]
+[ext_resource type="Script" uid="uid://bu1sm6fvn2yuu" path="res://scripts/bateria_label.gd" id="2_sa3ln"]
+
+[node name="BateriaLabel" type="Label" unique_id=317937942]
+theme = ExtResource("1_xo86m")
+text = "XX %"
+script = ExtResource("2_sa3ln")

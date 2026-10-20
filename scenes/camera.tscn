@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="5_p8nh0"]
 [ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="5_ys67x"]
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="8_mq7sm"]
+[ext_resource type="PackedScene" uid="uid://dykuclgmas0r8" path="res://scenes/bateria_label.tscn" id="9_5tt5c"]
 
 [node name="camera" type="TextureRect" unique_id=268232031]
 anchors_preset = 15
@@ -156,8 +157,16 @@ text = "X"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="HorarioLabel" parent="." unique_id=1023385714 instance=ExtResource("8_mq7sm")]
-layout_mode = 0
+[node name="HorarioBateria" type="VBoxContainer" parent="." unique_id=2109756936]
+layout_mode = 1
+offset_right = 216.0
+offset_bottom = 204.0
+
+[node name="HorarioLabel" parent="HorarioBateria" unique_id=1023385714 instance=ExtResource("8_mq7sm")]
+layout_mode = 2
+
+[node name="BateriaLabel" parent="HorarioBateria" unique_id=317937942 instance=ExtResource("9_5tt5c")]
+layout_mode = 2
 
 [connection signal="pressed" from="FecharCamera" to="." method="_on_fechar_camera_pressed"]
 [connection signal="pressed" from="TextureRect/Camera8" to="." method="_on_camera_pressed" binds= [8]]

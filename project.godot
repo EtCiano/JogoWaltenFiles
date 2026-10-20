@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 TimerTurnos="*uid://65gpd1mq5l3s"
 Global="*uid://bwhlshho6v6vb"
 TimerNoite="*uid://r3q8la8x1wp1"
+TimerBateria="*uid://dnca1c506o0kj"
 
 [display]
 

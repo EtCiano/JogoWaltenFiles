@@ -1,8 +1,6 @@
 extends Label
 
 func _ready() -> void:
-	self.position += Vector2(50, 25)
-	
 	if TimerNoite.horasPassadas == 0:
 		self.text = "12 AM"
 	else:

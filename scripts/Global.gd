@@ -70,6 +70,8 @@ const poses = {
 }
 
 var cameraAtual = 8
+var bateriaAtual: float = 100.0
+var gastoBateria = 1
 
 var posicaoBon = 8
 var posicaoAnteriorBon = 8

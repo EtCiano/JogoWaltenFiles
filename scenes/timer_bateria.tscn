@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnca1c506o0kj"]
+
+[ext_resource type="Script" uid="uid://cqkowep4gt8mi" path="res://scripts/timer_bateria.gd" id="1_qgmmu"]
+
+[node name="TimerBateria" type="Timer" unique_id=1275626879]
+wait_time = 4.800000000000001
+one_shot = true
+script = ExtResource("1_qgmmu")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

@@ -36,25 +36,21 @@ func _ready():
 	$Camera2D.ligar_botao($CameraRightButton, Vector2.RIGHT)
 	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
 	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
+	$UI/HorarioBateria.position += Vector2(50, 25)
 
-func _on_fechar_esquerda_pressed() -> void:
-	var estado_atual = Global.portasAbertas[Global.LADO.esquerda]
-	Global.portasAbertas[Global.LADO.esquerda] = (
+func _on_fechar_porta(lado: Global.LADO) -> void:
+	var estado_atual = Global.portasAbertas[lado]
+	Global.portasAbertas[lado] = (
 		Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
 	)
-	print('porta Esq. ', Global.portasAbertas[Global.LADO.esquerda])
+	if Global.portasAbertas[lado] == Global.ESTADO.fechado:
+		Global.gastoBateria += 1
+	else:
+		Global.gastoBateria -= 1
 	
-	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
-
-
-func _on_fechar_direita_pressed() -> void:
-	var estado_atual = Global.portasAbertas[Global.LADO.direita]
-	Global.portasAbertas[Global.LADO.direita] = (
-		Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
-	)
-	print('porta Dir. ', Global.portasAbertas[Global.LADO.direita])
+	print('porta Dir. ', Global.portasAbertas[lado])
 	
-	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
+	mudarPorta(lado, Global.portasAbertas[lado])
 
 
 func mudarPorta(lado: Global.LADO, estado: Global.ESTADO) -> void:
@@ -81,4 +77,5 @@ func _on_timer_tutorial_timeout() -> void:
 
 
 func _on_abrir_camera_pressed() -> void:
+	Global.gastoBateria += 1
 	get_tree().change_scene_to_file("res://scenes/camera.tscn")

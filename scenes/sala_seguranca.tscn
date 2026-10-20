@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 [ext_resource type="Script" uid="uid://c1ma5hrwrlyqm" path="res://scripts/camera_2d.gd" id="6_haxg8"]
 [ext_resource type="Theme" uid="uid://jb6gxgdm0wlp" path="res://themes/Camera2DThemeButton.tres" id="7_1c6gg"]
+[ext_resource type="PackedScene" uid="uid://dykuclgmas0r8" path="res://scenes/bateria_label.tscn" id="9_de6a4"]
 [ext_resource type="Texture2D" uid="uid://cjuhnxad3p7hs" path="res://resources/portaAberta.png" id="9_nv23p"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
@@ -136,9 +137,17 @@ icon = ExtResource("3_p5qe1")
 icon_alignment = 1
 expand_icon = true
 
-[node name="HorarioLabel" parent="UI" unique_id=1023385714 instance=ExtResource("4_vvx3o")]
+[node name="HorarioBateria" type="VBoxContainer" parent="UI" unique_id=1273738019]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HorarioLabel" parent="UI/HorarioBateria" unique_id=1023385714 instance=ExtResource("4_vvx3o")]
+layout_mode = 2
+
+[node name="BateriaLabel" parent="UI/HorarioBateria" unique_id=317937942 instance=ExtResource("9_de6a4")]
+layout_mode = 2
 
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
-[connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_esquerda_pressed"]
-[connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_direita_pressed"]
+[connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
+[connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]
 [connection signal="pressed" from="UI/AbrirCamera" to="." method="_on_abrir_camera_pressed"]
