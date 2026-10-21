@@ -7,10 +7,10 @@ func _on_fechar_camera_pressed() -> void:
 func _ready() -> void:
 	pass
 	#$HorarioBateria.position += Vector2(50, 25)
-	#Global.bonMudarCamera.connect(_mudar_camera_bon)
-	#$LabelCamera.text = str(Global.cameraAtual)
-	#_on_camera_pressed(Global.cameraAtual)
-	#_mudar_camera_bon()
+	Global.bonMudarCamera.connect(_mudar_camera_bon)
+	$LabelCamera.text = str(Global.cameraAtual)
+	_on_camera_pressed(Global.cameraAtual)
+	_mudar_camera_bon()
 
 func _on_camera_pressed(camera: int) -> void:
 	Global.cameraAtual = camera
