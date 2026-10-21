@@ -4,11 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://boe38oc50lkpn" path="res://resources/escritorio.png" id="1_y27cn"]
 [ext_resource type="Theme" uid="uid://dlbc3f4qxo44f" path="res://themes/doorButtonTheme.tres" id="2_4exue"]
 [ext_resource type="Texture2D" uid="uid://bfal0lppm24fp" path="res://resources/setaCima.png" id="3_p5qe1"]
+[ext_resource type="PackedScene" uid="uid://2ayavrxhvpa1" path="res://scenes/camera.tscn" id="3_x10o6"]
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 [ext_resource type="Script" uid="uid://c1ma5hrwrlyqm" path="res://scripts/camera_2d.gd" id="6_haxg8"]
 [ext_resource type="Theme" uid="uid://jb6gxgdm0wlp" path="res://themes/Camera2DThemeButton.tres" id="7_1c6gg"]
 [ext_resource type="PackedScene" uid="uid://dykuclgmas0r8" path="res://scenes/bateria_label.tscn" id="9_de6a4"]
 [ext_resource type="Texture2D" uid="uid://cjuhnxad3p7hs" path="res://resources/portaAberta.png" id="9_nv23p"]
+[ext_resource type="Theme" uid="uid://bbubrnkq1u4sn" path="res://themes/BateriaPanel.tres" id="10_de6a4"]
+[ext_resource type="Script" uid="uid://dt3uemp8bpnnd" path="res://scripts/bateria_container.gd" id="11_ocrui"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 z_index = -1
@@ -25,10 +28,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = -436.0
-offset_right = 303.0
-offset_bottom = 614.0
+offset_left = -281.0
+offset_top = -451.0
+offset_right = 307.0
+offset_bottom = 599.0
 grow_vertical = 2
 texture = ExtResource("9_nv23p")
 stretch_mode = 4
@@ -55,6 +58,12 @@ flip_h = true
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="CameraLayer" type="CanvasLayer" parent="." unique_id=2112227653]
+
+[node name="camera" parent="CameraLayer" unique_id=268232031 instance=ExtResource("3_x10o6")]
+offset_top = 1080.0
+offset_bottom = 1080.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1537749390]
 position = Vector2(1440, 540)
@@ -146,6 +155,45 @@ layout_mode = 2
 
 [node name="BateriaLabel" parent="UI/HorarioBateria" unique_id=317937942 instance=ExtResource("9_de6a4")]
 layout_mode = 2
+
+[node name="BateriaPanel" type="PanelContainer" parent="UI" unique_id=1744818338]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -145.0
+offset_right = 390.0
+offset_bottom = -33.0
+grow_vertical = 0
+theme = ExtResource("10_de6a4")
+
+[node name="BateriaContainer" type="HBoxContainer" parent="UI/BateriaPanel" unique_id=1210461082]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("11_ocrui")
+
+[node name="1" type="Panel" parent="UI/BateriaPanel/BateriaContainer" unique_id=267180509]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_de6a4")
+
+[node name="2" type="Panel" parent="UI/BateriaPanel/BateriaContainer" unique_id=721508833]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_de6a4")
+
+[node name="3" type="Panel" parent="UI/BateriaPanel/BateriaContainer" unique_id=1963185756]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_de6a4")
+
+[node name="4" type="Panel" parent="UI/BateriaPanel/BateriaContainer" unique_id=1761196403]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_de6a4")
 
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]

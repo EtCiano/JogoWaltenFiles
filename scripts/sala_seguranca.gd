@@ -1,6 +1,6 @@
 extends TextureRect
 
-var portasConfig = {
+const portasConfig = {
 	Global.LADO.esquerda: {
 		Global.ESTADO.fechado: {
 			"texture": preload("res://resources/portaFechada.png"),
@@ -37,6 +37,9 @@ func _ready():
 	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
 	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
 	$UI/HorarioBateria.position += Vector2(50, 25)
+	
+	$CameraLayer/camera.position.y = self.size.y
+	#$CameraLayer/camera.custom_maximum_size.x = get_viewport().size.x
 
 func _on_fechar_porta(lado: Global.LADO) -> void:
 	var estado_atual = Global.portasAbertas[lado]
@@ -44,9 +47,9 @@ func _on_fechar_porta(lado: Global.LADO) -> void:
 		Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
 	)
 	if Global.portasAbertas[lado] == Global.ESTADO.fechado:
-		Global.gastoBateria += 1
+		Global.mudarGasto(+1)
 	else:
-		Global.gastoBateria -= 1
+		Global.mudarGasto(-1)
 	
 	print('porta Dir. ', Global.portasAbertas[lado])
 	
@@ -77,5 +80,18 @@ func _on_timer_tutorial_timeout() -> void:
 
 
 func _on_abrir_camera_pressed() -> void:
-	Global.gastoBateria += 1
-	get_tree().change_scene_to_file("res://scenes/camera.tscn")
+	var posicaoAlvo: float
+	Global.cameraAberta = !Global.cameraAberta
+	if Global.cameraAberta: # tava fechado e abriu
+		Global.mudarGasto(+1)
+		posicaoAlvo = 0
+	else:                   # tava aberto e fechou
+		Global.mudarGasto(-1)
+		posicaoAlvo = self.size.y
+		
+	var tween = create_tween()
+	tween.tween_property($CameraLayer/camera, "position:y", posicaoAlvo, 0.2)
+	#tween.parallel().tween_property($FecharEsquerda, "modulate:a", 0.0, 10)
+	#await tween.finished
+	#$FecharDireita.self_modulate.a = 0
+	#$FecharEsquerda.self_modulate.a = 0

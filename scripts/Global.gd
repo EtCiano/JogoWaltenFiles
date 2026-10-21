@@ -1,10 +1,11 @@
 extends Node
 
 signal bonMudarCamera()
+signal mudarUsoBateria()
 
 enum ESTADO {
-	aberto,
-	fechado
+	aberto, 
+	fechado 
 }
 
 enum LADO {
@@ -78,6 +79,8 @@ var posicaoAnteriorBon = 8
 
 var continuar = false
 
+var cameraAberta = false
+
 func escolher_ponderado(itens: Array, pesos: Array) -> Variant:
 	assert(itens.size() == pesos.size(), "O array de itens e o de pesos precisam ter o mesmo tamanho!")
 	
@@ -93,6 +96,10 @@ func escolher_ponderado(itens: Array, pesos: Array) -> Variant:
 			return itens[i]
 			
 	return itens[-1]
+
+func mudarGasto(valor: int) -> void:
+	gastoBateria += valor
+	mudarUsoBateria.emit()
 
 func andarBon() -> void:
 	print(posicaoAnteriorBon, " pos anterior")

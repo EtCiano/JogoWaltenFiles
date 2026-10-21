@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bbubrnkq1u4sn"]
+
+[ext_resource type="StyleBox" uid="uid://c1msbef4ayehx" path="res://themes/BateriaPanelNormal.tres" id="1_4lan5"]
+[ext_resource type="StyleBox" uid="uid://bk24v25cqbtkq" path="res://themes/BateriaPanelContainerNormal.tres" id="2_74yc1"]
+
+[resource]
+Panel/styles/panel = ExtResource("1_4lan5")
+PanelContainer/styles/panel = ExtResource("2_74yc1")
