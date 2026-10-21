@@ -1,6 +1,6 @@
 extends TextureRect
 
-const portasConfig = {
+var portasConfig = {
 	Global.LADO.esquerda: {
 		Global.ESTADO.fechado: {
 			"texture": preload("res://resources/portaFechada.png"),
@@ -34,12 +34,31 @@ const portasConfig = {
 func _ready():
 	$Camera2D.ligar_botao($CameraLeftButton, Vector2.LEFT)
 	$Camera2D.ligar_botao($CameraRightButton, Vector2.RIGHT)
+	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
 	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
 	$UI/HorarioBateria.position += Vector2(50, 25)
 	
 	$CameraLayer/camera.position.y = self.size.y
 	#$CameraLayer/camera.custom_maximum_size.x = get_viewport().size.x
+
+func _mudar_camera_bon() -> void:
+	if Global.posicaoBon == Global.LADO.esquerda:
+		$BonEsquerda.visible = true
+		$BonDireita.visible = false
+		$BonCentro.visible = false
+	elif Global.posicaoBon == Global.LADO.direita:
+		$BonEsquerda.visible = false
+		$BonDireita.visible = true
+		$BonCentro.visible = false
+	elif Global.posicaoBon == -3:
+		$BonEsquerda.visible = false
+		$BonDireita.visible = false
+		$BonCentro.visible = true
+	else:
+		$BonEsquerda.visible = false
+		$BonDireita.visible = false
+		$BonCentro.visible = false
 
 func _on_fechar_porta(lado: Global.LADO) -> void:
 	var estado_atual = Global.portasAbertas[lado]
@@ -91,6 +110,7 @@ func _on_abrir_camera_pressed() -> void:
 		
 	var tween = create_tween()
 	tween.tween_property($CameraLayer/camera, "position:y", posicaoAlvo, 0.2)
+	#tween.set_trans(Tween.TransitionType.TRANS_QUAD)
 	#tween.parallel().tween_property($FecharEsquerda, "modulate:a", 0.0, 10)
 	#await tween.finished
 	#$FecharDireita.self_modulate.a = 0

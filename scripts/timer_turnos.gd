@@ -1,8 +1,8 @@
 extends Timer
 
-var tempoAcrescimo : int = 56 	# 56 
-const tempoTotal = 30 			# 30
-const acrescimoTotal = 10 		# 10
+var tempoAcrescimo : int = 40-15 	# 56 
+const tempoTotal = 15 				# 30
+const acrescimoTotal = 5 			# 10
 var quantTurnos = 0
 
 func iniciar() -> void:

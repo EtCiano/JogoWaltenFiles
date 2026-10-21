@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cjuhnxad3p7hs" path="res://resources/portaAberta.png" id="9_nv23p"]
 [ext_resource type="Theme" uid="uid://bbubrnkq1u4sn" path="res://themes/BateriaPanel.tres" id="10_de6a4"]
 [ext_resource type="Script" uid="uid://dt3uemp8bpnnd" path="res://scripts/bateria_container.gd" id="11_ocrui"]
+[ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="13_5t5kp"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 z_index = -1
@@ -29,9 +30,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -281.0
-offset_top = -451.0
+offset_top = -436.0
 offset_right = 307.0
-offset_bottom = 599.0
+offset_bottom = 614.0
 grow_vertical = 2
 texture = ExtResource("9_nv23p")
 stretch_mode = 4
@@ -195,7 +196,51 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_de6a4")
 
+[node name="BonDireita" type="TextureRect" parent="." unique_id=695631945]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -609.0
+offset_top = -221.0
+offset_bottom = 221.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
+[node name="BonEsquerda" type="TextureRect" parent="." unique_id=609441825]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -221.0
+offset_right = 609.0
+offset_bottom = 221.0
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
+[node name="BonCentro" type="TextureRect" parent="." unique_id=157092538]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -221.0
+offset_right = 304.5
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
-[connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
-[connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]
 [connection signal="pressed" from="UI/AbrirCamera" to="." method="_on_abrir_camera_pressed"]
