@@ -34,12 +34,11 @@ var portasConfig = {
 func _ready():
 	$Camera2D.ligar_botao($CameraLeftButton, Vector2.LEFT)
 	$Camera2D.ligar_botao($CameraRightButton, Vector2.RIGHT)
-	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
 	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
 	$UI/HorarioBateria.position += Vector2(50, 25)
-	
 	$CameraLayer/camera.position.y = self.size.y
+	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	#$CameraLayer/camera.custom_maximum_size.x = get_viewport().size.x
 
 func _mudar_camera_bon() -> void:

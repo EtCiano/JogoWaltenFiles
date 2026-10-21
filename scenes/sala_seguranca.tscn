@@ -243,4 +243,6 @@ grow_vertical = 2
 texture = ExtResource("13_5t5kp")
 
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
+[connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
+[connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]
 [connection signal="pressed" from="UI/AbrirCamera" to="." method="_on_abrir_camera_pressed"]
