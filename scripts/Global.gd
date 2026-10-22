@@ -130,8 +130,18 @@ func iniciar_jogo() -> void:
 	get_tree().change_scene_to_file("res://scenes/sala_seguranca.tscn")
 	mostrarPosBon()
 	continuar = true
+	cameraAtual = 8
+	gastoBateria = 1
+	posicaoBon = 8
+	posicaoAnteriorBon = 8
+	
+	TimerNoite.horasPassadas = 0
 	TimerNoite.iniciar()
+	
+	TimerTurnos.quantTurnos = 0
 	TimerTurnos.iniciar()
+	
+	bateriaAtual = 100
 	TimerBateria.iniciar()
 
 func mostrarPosBon() -> void:

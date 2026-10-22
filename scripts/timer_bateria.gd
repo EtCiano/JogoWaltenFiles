@@ -2,14 +2,17 @@ extends Timer
 
 signal mudarBateriaLabel()
 
-const tempoBateria = 1
-const gastoPorcentagem = tempoBateria / 19.2
+const tempoBateria = 1 # 19.2
+const tempoUmPorcento = ((9.6*TimerNoite.intervalo)/86)
+const gastoPorcentagem = tempoBateria / tempoUmPorcento
 
 # 19.2s 	   -> -1%
 # tempoBateria -> gastoPorcentagem
 
 func _ready() -> void:
 	print("gasto por porcentagem: ", gastoPorcentagem)
+	print("tempo a cada 1%: ", tempoUmPorcento)
+	print("bateria final minima: ", 100-((TimerNoite.intervalo*6)/tempoUmPorcento))
 
 func iniciar() -> void:
 	start(tempoBateria)
