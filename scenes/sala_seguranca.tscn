@@ -23,6 +23,52 @@ texture = ExtResource("1_y27cn")
 stretch_mode = 2
 script = ExtResource("1_w1ner")
 
+[node name="BonDireita" type="TextureRect" parent="." unique_id=695631945]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -609.0
+offset_top = -221.0
+offset_bottom = 221.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
+[node name="BonEsquerda" type="TextureRect" parent="." unique_id=609441825]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -221.0
+offset_right = 609.0
+offset_bottom = 221.0
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
+[node name="BonCentro" type="TextureRect" parent="." unique_id=157092538]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -221.0
+offset_right = 304.5
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_5t5kp")
+
 [node name="portaEsq" type="TextureRect" parent="." unique_id=154753124]
 z_index = 1
 layout_mode = 1
@@ -195,52 +241,6 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_de6a4")
-
-[node name="BonDireita" type="TextureRect" parent="." unique_id=695631945]
-visible = false
-z_index = -1
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -609.0
-offset_top = -221.0
-offset_bottom = 221.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("13_5t5kp")
-
-[node name="BonEsquerda" type="TextureRect" parent="." unique_id=609441825]
-visible = false
-z_index = -1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -221.0
-offset_right = 609.0
-offset_bottom = 221.0
-grow_vertical = 2
-texture = ExtResource("13_5t5kp")
-
-[node name="BonCentro" type="TextureRect" parent="." unique_id=157092538]
-visible = false
-z_index = -1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -304.5
-offset_top = -221.0
-offset_right = 304.5
-offset_bottom = 221.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("13_5t5kp")
 
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]

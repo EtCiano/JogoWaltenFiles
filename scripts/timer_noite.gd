@@ -8,9 +8,6 @@ var horasPassadas = 0
 const horaFinal = 6
 var contagem = 0
 
-func _ready() -> void:
-	iniciar()
-
 func iniciar() -> void:
 	if horasPassadas == horaFinal:
 		Global.continuar = false

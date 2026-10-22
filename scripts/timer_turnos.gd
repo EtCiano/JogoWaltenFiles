@@ -1,8 +1,8 @@
 extends Timer
 
-var tempoAcrescimo : int = 40-15 	# 56 
-const tempoTotal = 15 				# 30
-const acrescimoTotal = 5 			# 10
+var tempoAcrescimo : int = 40 	# 40
+const tempoTotal = 15 			# 15
+const acrescimoTotal = 5 		# 5
 var quantTurnos = 0
 
 func iniciar() -> void:
@@ -15,11 +15,7 @@ func _on_timeout() -> void:
 		
 		Global.andarBon()
 		if Global.posicaoBon == -4:
-			Global.continuar = false
+			Global.matarJogador()
 		
 		tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
 		iniciar()
-
-
-func _on_timer_porta_timeout() -> void:
-	pass # Matar a pietra :X

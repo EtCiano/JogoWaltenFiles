@@ -127,10 +127,12 @@ func matarBon() -> void:
 		mudarPosBon(8)
 	
 func iniciar_jogo() -> void:
+	get_tree().change_scene_to_file("res://scenes/sala_seguranca.tscn")
 	mostrarPosBon()
 	continuar = true
 	TimerNoite.iniciar()
 	TimerTurnos.iniciar()
+	TimerBateria.iniciar()
 
 func mostrarPosBon() -> void:
 	print("bon -> ", posicaoBon)
@@ -140,3 +142,11 @@ func mudarPosBon(novaPos) -> void:
 	posicaoBon = novaPos
 	mostrarPosBon()
 	bonMudarCamera.emit()
+
+func matarJogadorBateria() -> void:
+	matarJogador() # temporariamente
+
+func matarJogador() -> void:
+	continuar = false
+	get_tree().change_scene_to_file("res://scenes/tela_morte.tscn")
+	

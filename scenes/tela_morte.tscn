@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bbcfraam5pq11"]
+
+[ext_resource type="Theme" uid="uid://c1e3j3qviu5iv" path="res://themes/buttonTheme.tres" id="1_7nsc2"]
+[ext_resource type="VideoStream" uid="uid://chjebaltjsy4q" path="res://resources/spritesBon/bonMorte1.ogv" id="1_8rh3k"]
+[ext_resource type="Script" uid="uid://drlj7muhhnql7" path="res://scripts/tela_morte.gd" id="1_67wje"]
+[ext_resource type="Script" uid="uid://dyjfwwypjtajj" path="res://scripts/start_button.gd" id="2_7nsc2"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" unique_id=149853130]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_8rh3k")
+autoplay = true
+expand = true
+script = ExtResource("1_67wje")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=877715727]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5921569, 0.011764706, 0.019607844, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=866991104]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_top = -470.0
+offset_right = -99.99951
+offset_bottom = -99.99951
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 29
+
+[node name="RetryButton" type="Button" parent="VBoxContainer" unique_id=2121986144]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7nsc2")
+text = "Tentar Novamente"
+script = ExtResource("2_7nsc2")
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1755369069]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7nsc2")
+text = "Sair"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="pressed" from="VBoxContainer/RetryButton" to="VBoxContainer/RetryButton" method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/RetryButton" method="_on_quit_button_pressed"]
