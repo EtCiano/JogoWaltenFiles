@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ctcx2ee4g2ppr"]
+
+[ext_resource type="Script" uid="uid://dcnar83vxicg2" path="res://scripts/camera_default.gd" id="1_l117a"]
+
+[node name="CameraDefault" type="TextureRect" unique_id=197646467]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+script = ExtResource("1_l117a")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=363498282]
+visible = false
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)

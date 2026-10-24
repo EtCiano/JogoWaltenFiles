@@ -13,16 +13,14 @@ func _ready() -> void:
 
 func _on_camera_pressed(camera: int) -> void:
 	Global.cameraAtual = camera
-	self.texture = Global.cameras[Global.cameraAtual]
-	if Global.cameraAtual == Global.posicaoBon:
-		$BonSprite.visible = true
-	else:
-		$BonSprite.visible = false
+	for cameraAntiga in $espacoCamera.get_children():
+		cameraAntiga.queue_free()
+	var cameraNova = Global.cameras[camera].instantiate()
+	$espacoCamera.add_child(cameraNova)
+	cameraNova.checarBon()
 	
 	$LabelCamera.text = str(camera)
 		
 func _mudar_camera_bon() -> void:
-	if Global.cameraAtual == Global.posicaoBon:
-		$BonSprite.visible = true
-	else:
-		$BonSprite.visible = false
+	for camera in $espacoCamera.get_children():
+		camera.checarBon()

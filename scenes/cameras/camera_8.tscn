@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqn2gwej6jjxh"]
+
+[ext_resource type="Texture2D" uid="uid://byrc5d3xpv246" path="res://resources/cameras/camera8.png" id="1_1nhhd"]
+[ext_resource type="PackedScene" uid="uid://ctcx2ee4g2ppr" path="res://scenes/cameras/camera_default.tscn" id="1_2eqif"]
+[ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="3_tls05"]
+
+[node name="Camera8" unique_id=197646467 instance=ExtResource("1_2eqif")]
+texture = ExtResource("1_1nhhd")
+
+[node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=822570613]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 208.0
+offset_right = 976.0
+offset_bottom = 857.0
+texture = ExtResource("3_tls05")
+expand_mode = 2
+stretch_mode = 5

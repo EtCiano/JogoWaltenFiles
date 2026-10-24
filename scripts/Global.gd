@@ -50,14 +50,14 @@ var portasAbertas = {
 }
 
 const cameras = {
-	1: preload("res://resources/cameras/camera1.png"),
-	2: preload("res://resources/cameras/camera2.png"),
-	3: preload("res://resources/cameras/camera3.png"),
-	4: preload("res://resources/cameras/camera4.png"),
-	5: preload("res://resources/cameras/camera5.png"),
-	6: preload("res://resources/cameras/camera6.png"),
-	7: preload("res://resources/cameras/camera7.png"),
-	8: preload("res://resources/cameras/camera8.png")
+	1: preload("res://scenes/cameras/camera_1.tscn"),
+	2: preload("res://scenes/cameras/camera_2.tscn"),
+	3: preload("res://scenes/cameras/camera_3.tscn"),
+	4: preload("res://scenes/cameras/camera_4.tscn"),
+	5: preload("res://scenes/cameras/camera_5.tscn"),
+	6: preload("res://scenes/cameras/camera_6.tscn"),
+	7: preload("res://scenes/cameras/camera_7.tscn"),
+	8: preload("res://scenes/cameras/camera_8.tscn")
 }
 
 const poses = {

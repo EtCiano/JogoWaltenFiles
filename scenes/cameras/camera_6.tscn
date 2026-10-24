@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ce6qqlnv18f7v"]
+
+[ext_resource type="PackedScene" uid="uid://ctcx2ee4g2ppr" path="res://scenes/cameras/camera_default.tscn" id="1_i61wt"]
+[ext_resource type="Texture2D" uid="uid://cgiku1dao64xp" path="res://resources/cameras/camera6.png" id="1_nj1mj"]
+[ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="3_2kqv2"]
+[ext_resource type="PackedScene" uid="uid://cf3df0tn1f431" path="res://scenes/luz_camera.tscn" id="4_vuueh"]
+
+[node name="Camera6" unique_id=197646467 instance=ExtResource("1_i61wt")]
+texture = ExtResource("1_nj1mj")
+
+[node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=584824356]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 208.0
+offset_right = 976.0
+offset_bottom = 857.0
+texture = ExtResource("3_2kqv2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="LuzCamera" parent="." index="2" unique_id=1258254145 instance=ExtResource("4_vuueh")]
+visible = false
+position = Vector2(1528, 111)
+scale = Vector2(37.485, 37.485)

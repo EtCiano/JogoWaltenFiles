@@ -1,6 +1,6 @@
 extends Timer
 
-var tempoAcrescimo : int = 40 	# 40
+var tempoAcrescimo : int = 0 	# 40
 const tempoTotal = 15 			# 15
 const acrescimoTotal = 10 		# 10
 var quantTurnos = 0
