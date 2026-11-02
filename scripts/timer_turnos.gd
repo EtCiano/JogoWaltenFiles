@@ -18,4 +18,12 @@ func _on_timeout() -> void:
 			Global.matarJogador()
 		
 		tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
+		
+		randomize()
+		
+		var eventoSorteado = Global.EVENTO_BON.keys().pick_random()
+		
+		if eventoSorteado != Global.EVENTO_BON.nada:
+			Global.executarEvento(eventoSorteado)
+		
 		iniciar()

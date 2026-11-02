@@ -3,6 +3,13 @@ extends Node
 signal bonMudarCamera()
 signal mudarUsoBateria()
 
+enum EVENTO_BON {
+	nada,
+	audio,
+	energia,
+	desenho
+}
+
 enum ESTADO {
 	aberto, 
 	fechado 
@@ -155,6 +162,9 @@ func mudarPosBon(novaPos) -> void:
 
 func matarJogadorBateria() -> void:
 	matarJogador() # temporariamente
+
+func executarEvento(evento : EVENTO_BON) -> void:
+	pass
 
 func matarJogador() -> void:
 	continuar = false

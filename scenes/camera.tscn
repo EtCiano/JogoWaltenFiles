@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://2ayavrxhvpa1"]
 
-[ext_resource type="Texture2D" uid="uid://cf8dfbpbgivlq" path="res://resources/cameras/cameraVazia.png" id="1_b05li"]
 [ext_resource type="Script" uid="uid://e8vqrmy3g044" path="res://scripts/camera.gd" id="1_tmlye"]
 [ext_resource type="Texture2D" uid="uid://woromjcw3mlr" path="res://resources/mapaCamera.png" id="4_b05li"]
 [ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="5_p8nh0"]
+
+[sub_resource type="Gradient" id="Gradient_b05li"]
+offsets = PackedFloat32Array(0.58522725, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.54497385, 0.5449744, 0.5449741, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gtx3x"]
+noise_type = 5
+frequency = 0.0643
+fractal_lacunarity = 0.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tmlye"]
+width = 711
+height = 1339
+noise = SubResource("FastNoiseLite_gtx3x")
+color_ramp = SubResource("Gradient_b05li")
+seamless = true
+seamless_blend_skirt = 1.0
 
 [node name="camera" type="TextureRect" unique_id=268232031]
 anchors_preset = 15
@@ -11,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_b05li")
+texture = SubResource("NoiseTexture2D_tmlye")
 expand_mode = 2
 script = ExtResource("1_tmlye")
 
@@ -97,16 +113,6 @@ offset_bottom = 212.0
 theme = ExtResource("5_p8nh0")
 text = "3"
 
-[node name="Camera1" type="Button" parent="TextureRect" unique_id=495977934]
-z_index = 1
-layout_mode = 0
-offset_left = 218.0
-offset_top = 62.0
-offset_right = 298.0
-offset_bottom = 116.0
-theme = ExtResource("5_p8nh0")
-text = "1"
-
 [node name="Camera2" type="Button" parent="TextureRect" unique_id=318962474]
 z_index = 1
 layout_mode = 0
@@ -116,6 +122,16 @@ offset_right = 316.0
 offset_bottom = 242.0
 theme = ExtResource("5_p8nh0")
 text = "2"
+
+[node name="Camera1" type="Button" parent="TextureRect" unique_id=495977934]
+z_index = 1
+layout_mode = 0
+offset_left = 274.0
+offset_top = 72.0
+offset_right = 354.0
+offset_bottom = 126.0
+theme = ExtResource("5_p8nh0")
+text = "1"
 
 [node name="LabelCamera" type="Label" parent="." unique_id=1622688640]
 layout_mode = 1
@@ -138,5 +154,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="TextureRect/Camera7" to="." method="_on_camera_pressed" binds= [7]]
 [connection signal="pressed" from="TextureRect/Camera4" to="." method="_on_camera_pressed" binds= [4]]
 [connection signal="pressed" from="TextureRect/Camera3" to="." method="_on_camera_pressed" binds= [3]]
-[connection signal="pressed" from="TextureRect/Camera1" to="." method="_on_camera_pressed" binds= [1]]
 [connection signal="pressed" from="TextureRect/Camera2" to="." method="_on_camera_pressed" binds= [2]]
+[connection signal="pressed" from="TextureRect/Camera1" to="." method="_on_camera_pressed" binds= [1]]
