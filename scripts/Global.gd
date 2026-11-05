@@ -67,6 +67,8 @@ const cameras = {
 	8: preload("res://scenes/cameras/camera_8.tscn")
 }
 
+var audios: Array
+
 const poses = {
 	1: [],
 	2: [],
@@ -87,6 +89,32 @@ var posicaoAnteriorBon = 8
 var continuar = false
 
 var cameraAberta = false
+
+
+func _ready() -> void:
+	var caminho_pasta = "res://resources/AudiosBon/"
+	if not caminho_pasta.ends_with("/"):
+		caminho_pasta += "/"
+		
+	var dir = DirAccess.open(caminho_pasta)
+	
+	if dir:
+		dir.list_dir_begin()
+		var nome_arquivo = dir.get_next()
+		
+		while nome_arquivo != "":
+			if not dir.current_is_dir():
+				if nome_arquivo.ends_with(".mp3"):
+					var caminho_completo = caminho_pasta + nome_arquivo
+					var audio_carregado = load(caminho_completo)
+					
+					if audio_carregado:
+						audios.append(audio_carregado)
+						print("audio", caminho_completo, "pré-carregado com sucesso")
+						
+			nome_arquivo = dir.get_next()
+		dir.list_dir_end()
+		print(audios)
 
 func escolher_ponderado(itens: Array, pesos: Array) -> Variant:
 	assert(itens.size() == pesos.size(), "O array de itens e o de pesos precisam ter o mesmo tamanho!")
@@ -164,7 +192,9 @@ func matarJogadorBateria() -> void:
 	matarJogador() # temporariamente
 
 func executarEvento(evento : EVENTO_BON) -> void:
-	pass
+	if evento == EVENTO_BON.audio:
+		AudioLoader.stream = audios.pick_random()
+		AudioLoader.play()
 
 func matarJogador() -> void:
 	continuar = false
