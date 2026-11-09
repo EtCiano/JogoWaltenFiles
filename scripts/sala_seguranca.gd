@@ -61,17 +61,18 @@ func _mudar_camera_bon() -> void:
 
 func _on_fechar_porta(lado: Global.LADO) -> void:
 	var estado_atual = Global.portasAbertas[lado]
-	Global.portasAbertas[lado] = (
-		Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
-	)
-	if Global.portasAbertas[lado] == Global.ESTADO.fechado:
-		Global.mudarGasto(+1)
-	else:
-		Global.mudarGasto(-1)
-	
-	print('porta Dir. ', Global.portasAbertas[lado])
-	
-	mudarPorta(lado, Global.portasAbertas[lado])
+	if !Global.piscandoLuzes:
+		Global.portasAbertas[lado] = (
+			Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
+		)
+		if Global.portasAbertas[lado] == Global.ESTADO.fechado:
+			Global.mudarGasto(+1)
+		else:
+			Global.mudarGasto(-1)
+		
+		print('porta Dir. ', Global.portasAbertas[lado])
+		
+		mudarPorta(lado, Global.portasAbertas[lado])
 
 
 func mudarPorta(lado: Global.LADO, estado: Global.ESTADO) -> void:
@@ -99,18 +100,19 @@ func _on_timer_tutorial_timeout() -> void:
 
 func _on_abrir_camera_pressed() -> void:
 	var posicaoAlvo: float
+	var tamanhoAlvo: float
 	Global.cameraAberta = !Global.cameraAberta
 	if Global.cameraAberta: # tava fechado e abriu
 		Global.mudarGasto(+1)
 		posicaoAlvo = 0
+		tamanhoAlvo = 1.0
 	else:                   # tava aberto e fechou
 		Global.mudarGasto(-1)
 		posicaoAlvo = self.size.y
+		tamanhoAlvo = 0.0
 		
 	var tween = create_tween()
 	tween.tween_property($CameraLayer/camera, "position:y", posicaoAlvo, 0.2)
-	#tween.set_trans(Tween.TransitionType.TRANS_QUAD)
-	#tween.parallel().tween_property($FecharEsquerda, "modulate:a", 0.0, 10)
+	tween.parallel().tween_property($CameraLayer/camera, "scale:y", tamanhoAlvo, 0.2)
+	#tween.set_trans(Tween.TRANS_BOUNCE)
 	#await tween.finished
-	#$FecharDireita.self_modulate.a = 0
-	#$FecharEsquerda.self_modulate.a = 0

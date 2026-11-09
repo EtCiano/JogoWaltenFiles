@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://bbubrnkq1u4sn" path="res://themes/BateriaPanel.tres" id="10_de6a4"]
 [ext_resource type="Script" uid="uid://dt3uemp8bpnnd" path="res://scripts/bateria_container.gd" id="11_ocrui"]
 [ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="13_5t5kp"]
+[ext_resource type="Script" uid="uid://ccvs3lc40ollx" path="res://scripts/timer_evento_bateria.gd" id="14_wg1w3"]
 
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 z_index = -1
@@ -113,6 +114,7 @@ autostart = true
 [node name="camera" parent="CameraLayer" unique_id=268232031 instance=ExtResource("3_x10o6")]
 offset_top = 1080.0
 offset_bottom = 1080.0
+scale = Vector2(1, 1e-05)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1537749390]
 position = Vector2(1440, 540)
@@ -244,7 +246,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_de6a4")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=660693976]
+visible = false
+color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[node name="TimerEventoBateria" type="Timer" parent="CanvasModulate" unique_id=1632474376]
+one_shot = true
+script = ExtResource("14_wg1w3")
+
 [connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]
 [connection signal="pressed" from="UI/AbrirCamera" to="." method="_on_abrir_camera_pressed"]
+[connection signal="timeout" from="CanvasModulate/TimerEventoBateria" to="CanvasModulate/TimerEventoBateria" method="_on_timeout"]

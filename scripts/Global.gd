@@ -2,6 +2,7 @@ extends Node
 
 signal bonMudarCamera()
 signal mudarUsoBateria()
+signal eventoBateriaSignal()
 
 enum EVENTO_BON {
 	nada,
@@ -90,6 +91,8 @@ var continuar = false
 
 var cameraAberta = false
 
+var piscandoLuzes = false
+
 
 func _ready() -> void:
 	var caminho_pasta = "res://resources/AudiosBon/"
@@ -110,11 +113,9 @@ func _ready() -> void:
 					
 					if audio_carregado:
 						audios.append(audio_carregado)
-						print("audio", caminho_completo, "pré-carregado com sucesso")
 						
 			nome_arquivo = dir.get_next()
 		dir.list_dir_end()
-		print(audios)
 
 func escolher_ponderado(itens: Array, pesos: Array) -> Variant:
 	assert(itens.size() == pesos.size(), "O array de itens e o de pesos precisam ter o mesmo tamanho!")
@@ -165,10 +166,6 @@ func iniciar_jogo() -> void:
 	get_tree().change_scene_to_file("res://scenes/sala_seguranca.tscn")
 	mostrarPosBon()
 	continuar = true
-	cameraAtual = 8
-	gastoBateria = 1
-	posicaoBon = 8
-	posicaoAnteriorBon = 8
 	
 	TimerNoite.horasPassadas = 0
 	TimerNoite.iniciar()
@@ -195,6 +192,8 @@ func executarEvento(evento : EVENTO_BON) -> void:
 	if evento == EVENTO_BON.audio:
 		AudioLoader.stream = audios.pick_random()
 		AudioLoader.play()
+	if evento == EVENTO_BON.energia:
+		eventoBateriaSignal.emit()
 
 func matarJogador() -> void:
 	continuar = false

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://j1smf1gug0cf"]
+
+[ext_resource type="Script" uid="uid://ccvs3lc40ollx" path="res://scripts/timer_evento_bateria.gd" id="1_tp0of"]
+
+[node name="TimerEventoBateria" type="Timer" unique_id=970654460]
+one_shot = true
+script = ExtResource("1_tp0of")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
