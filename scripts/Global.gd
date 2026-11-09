@@ -2,7 +2,8 @@ extends Node
 
 signal bonMudarCamera()
 signal mudarUsoBateria()
-signal eventoBateriaSignal()
+signal eventoEnergiaSignal()
+signal eventoEnergiaAcabouSignal()
 
 enum EVENTO_BON {
 	nada,
@@ -36,7 +37,6 @@ const locais = {
 	-4: [-4]
 }
 
-
 const locaisPesos = {
 	1: [2, 3, 1],
 	2: [1, 2, 2],
@@ -68,7 +68,7 @@ const cameras = {
 	8: preload("res://scenes/cameras/camera_8.tscn")
 }
 
-var audios: Array
+var audios: Array[AudioStream]
 
 const poses = {
 	1: [],
@@ -138,11 +138,8 @@ func mudarGasto(valor: int) -> void:
 	mudarUsoBateria.emit()
 
 func andarBon() -> void:
-	print(posicaoAnteriorBon, " pos anterior")
 	var possiveisLocais = locais[posicaoBon].duplicate(true)
-	print(possiveisLocais, " locais antes")
 	var possiveisPesos = locaisPesos[posicaoBon].duplicate(true)
-	print(possiveisPesos, " pesos antes")
 	var indexAnterior: int
 	if posicaoAnteriorBon in possiveisLocais:
 		indexAnterior = possiveisLocais.find(posicaoAnteriorBon)
@@ -193,9 +190,11 @@ func executarEvento(evento : EVENTO_BON) -> void:
 		AudioLoader.stream = audios.pick_random()
 		AudioLoader.play()
 	if evento == EVENTO_BON.energia:
-		eventoBateriaSignal.emit()
+		eventoEnergiaSignal.emit()
 
 func matarJogador() -> void:
 	continuar = false
 	get_tree().change_scene_to_file("res://scenes/tela_morte.tscn")
 	
+func _eventoEnergiaAcabou() -> void:
+	eventoEnergiaAcabouSignal.emit()

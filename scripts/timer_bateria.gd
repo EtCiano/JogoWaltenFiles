@@ -26,7 +26,7 @@ func _on_timeout() -> void:
 	Global.bateriaAtual -= Global.gastoBateria * gastoPorcentagem
 	mudarBateriaLabel.emit()
 	#print("timer bateria: ", contagem)
-	print("bateria: ", Global.bateriaAtual)
+	#print("bateria: ", Global.bateriaAtual)
 	if Global.bateriaAtual <= 0:
 		Global.matarJogadorBateria()
 		return

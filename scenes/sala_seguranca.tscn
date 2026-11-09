@@ -104,11 +104,6 @@ texture = ExtResource("9_nv23p")
 stretch_mode = 4
 flip_h = true
 
-[node name="TimerTutorial" type="Timer" parent="." unique_id=164880972]
-wait_time = 60.0
-one_shot = true
-autostart = true
-
 [node name="CameraLayer" type="CanvasLayer" parent="." unique_id=2112227653]
 
 [node name="camera" parent="CameraLayer" unique_id=268232031 instance=ExtResource("3_x10o6")]
@@ -246,6 +241,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_de6a4")
 
+[node name="TimerTutorial" type="Timer" parent="." unique_id=164880972]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=660693976]
 visible = false
 color = Color(0.28485027, 0.28485027, 0.28485027, 1)
@@ -254,8 +254,8 @@ color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 one_shot = true
 script = ExtResource("14_wg1w3")
 
-[connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]
 [connection signal="pressed" from="UI/AbrirCamera" to="." method="_on_abrir_camera_pressed"]
+[connection signal="timeout" from="TimerTutorial" to="." method="_on_timer_tutorial_timeout"]
 [connection signal="timeout" from="CanvasModulate/TimerEventoBateria" to="CanvasModulate/TimerEventoBateria" method="_on_timeout"]

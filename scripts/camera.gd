@@ -6,18 +6,24 @@ func _on_fechar_camera_pressed() -> void:
 
 func _ready() -> void:
 	#$HorarioBateria.position += Vector2(50, 25)
+	Global.eventoEnergiaAcabouSignal.connect(_on_camera_pressed.bind(Global.cameraAtual))
 	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	$LabelCamera.text = str(Global.cameraAtual)
 	_on_camera_pressed(Global.cameraAtual)
 	_mudar_camera_bon()
+	
+func _process(delta: float) -> void:
+	if Global.piscandoLuzes:
+		self.texture.noise.seed += 1
 
 func _on_camera_pressed(camera: int) -> void:
 	Global.cameraAtual = camera
 	for cameraAntiga in $espacoCamera.get_children():
 		cameraAntiga.queue_free()
-	var cameraNova = Global.cameras[camera].instantiate()
-	$espacoCamera.add_child(cameraNova)
-	cameraNova.checarBon()
+	if !Global.piscandoLuzes:
+		var cameraNova = Global.cameras[camera].instantiate()
+		$espacoCamera.add_child(cameraNova)
+		cameraNova.checarBon()
 	
 	$LabelCamera.text = str(camera)
 		
