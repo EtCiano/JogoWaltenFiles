@@ -15,6 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="13_5t5kp"]
 [ext_resource type="Script" uid="uid://ccvs3lc40ollx" path="res://scripts/timer_evento_bateria.gd" id="14_wg1w3"]
 
+[sub_resource type="Gradient" id="Gradient_wg1w3"]
+offsets = PackedFloat32Array(0.2640264, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6aal"]
+gradient = SubResource("Gradient_wg1w3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8632479, 0.16239317)
+
 [node name="SalaSeguranca" type="TextureRect" unique_id=878938803]
 z_index = -1
 offset_right = 2880.0
@@ -247,12 +257,30 @@ one_shot = true
 autostart = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=660693976]
-visible = false
-color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+color = Color(0.2159017, 0.21590173, 0.2159017, 1)
 
 [node name="TimerEventoBateria" type="Timer" parent="CanvasModulate" unique_id=1632474376]
 one_shot = true
 script = ExtResource("14_wg1w3")
+
+[node name="Luzes" type="Node2D" parent="." unique_id=2118569280]
+
+[node name="LuzCentro" type="PointLight2D" parent="Luzes" unique_id=91685557]
+position = Vector2(1438, 100)
+texture = SubResource("GradientTexture2D_g6aal")
+texture_scale = 20.99
+
+[node name="LuzEsquerda" type="PointLight2D" parent="Luzes" unique_id=1551511957]
+position = Vector2(704, 459)
+color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+texture = SubResource("GradientTexture2D_g6aal")
+texture_scale = 12.71
+
+[node name="LuzDireita" type="PointLight2D" parent="Luzes" unique_id=206978802]
+position = Vector2(2164, 450)
+color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+texture = SubResource("GradientTexture2D_g6aal")
+texture_scale = 12.71
 
 [connection signal="pressed" from="FecharEsquerda" to="." method="_on_fechar_porta" binds= [-1]]
 [connection signal="pressed" from="FecharDireita" to="." method="_on_fechar_porta" binds= [-2]]

@@ -21,8 +21,8 @@ func _on_timeout() -> void:
 		
 		randomize()
 		
-		#var eventoSorteado = Global.EVENTO_BON[Global.EVENTO_BON.keys().pick_random()]
-		var eventoSorteado = Global.EVENTO_BON.energia
+		var eventoSorteado = Global.EVENTO_BON[Global.EVENTO_BON.keys().pick_random()]
+		#var eventoSorteado = Global.EVENTO_BON.energia
 		print("evento: ", Global.EVENTO_BON.find_key(eventoSorteado))
 		if eventoSorteado != Global.EVENTO_BON.nada:
 			Global.executarEvento(eventoSorteado)

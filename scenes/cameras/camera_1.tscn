@@ -6,6 +6,9 @@
 
 [node name="Camera1" unique_id=197646467 instance=ExtResource("1_kdvlj")]
 texture = ExtResource("2_jrifm")
+centro_luz = Vector2(0.765, 0.06)
+raio_luz = 0.03600000171
+suavidade = 1.10400005244
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=638908934]
 layout_mode = 0

@@ -6,6 +6,8 @@
 
 [node name="Camera8" unique_id=197646467 instance=ExtResource("1_2eqif")]
 texture = ExtResource("1_1nhhd")
+centro_luz = Vector2(0.9, 0.295)
+suavidade = 0.712
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=822570613]
 layout_mode = 0

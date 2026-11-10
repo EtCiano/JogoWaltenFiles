@@ -30,3 +30,4 @@ func _on_camera_pressed(camera: int) -> void:
 func _mudar_camera_bon() -> void:
 	for camera in $espacoCamera.get_children():
 		camera.checarBon()
+	#_on_camera_pressed(Global.cameraAtual)

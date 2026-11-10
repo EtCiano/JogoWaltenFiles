@@ -6,8 +6,11 @@
 
 [node name="Camera5" unique_id=197646467 instance=ExtResource("1_ulgae")]
 texture = ExtResource("1_rujwv")
+centro_luz = Vector2(0.585, 0.06)
+suavidade = 0.632
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=1374466978]
+visible = false
 layout_mode = 0
 offset_left = 76.0
 offset_top = 208.0

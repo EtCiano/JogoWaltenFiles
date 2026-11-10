@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://ctcx2ee4g2ppr"]
 
 [ext_resource type="Script" uid="uid://dcnar83vxicg2" path="res://scripts/camera_default.gd" id="1_l117a"]
+[ext_resource type="Shader" uid="uid://b8ammol7lasbg" path="res://resources/shaders/luz_camera.gdshader" id="2_y7bwb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g6aal"]
+shader = ExtResource("2_y7bwb")
+shader_parameter/centro = Vector2(0.765, 0.06)
+shader_parameter/raio = 0.03600000171
+shader_parameter/suavidade = 1.10400005244
+shader_parameter/escuridao = 0.85600004066
+shader_parameter/aspecto = 1.777
 
 [node name="CameraDefault" type="TextureRect" unique_id=197646467]
 anchors_preset = 15
@@ -10,7 +19,14 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 2
 script = ExtResource("1_l117a")
+centro_luz = Vector2(1, 1)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=363498282]
-visible = false
-color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+[node name="Escuro" type="ColorRect" parent="." unique_id=1083734870]
+material = SubResource("ShaderMaterial_g6aal")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

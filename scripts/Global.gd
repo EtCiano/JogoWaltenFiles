@@ -146,8 +146,6 @@ func andarBon() -> void:
 		if possiveisLocais.size() > 1:
 			possiveisLocais.remove_at(indexAnterior)
 			possiveisPesos.remove_at(indexAnterior)
-	print(possiveisLocais, " locais depois")
-	print(possiveisPesos, " pesos depois")
 	if posicaoBon == LADO.esquerda or posicaoBon == LADO.direita:
 		matarBon()
 		return
@@ -175,6 +173,7 @@ func iniciar_jogo() -> void:
 
 func mostrarPosBon() -> void:
 	print("bon -> ", posicaoBon)
+	print("cameraAtual ->", cameraAtual)
 	
 func mudarPosBon(novaPos) -> void:
 	posicaoAnteriorBon = 0+posicaoBon
