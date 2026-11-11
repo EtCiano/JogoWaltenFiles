@@ -34,11 +34,12 @@ func _iniciar() -> void:
 func _on_timeout() -> void:
 	on = !on
 	luzes.visible = on
+	#get_node("../../UI/lanterna").visible = on
 	count += 1
 	if count >= quantPiscadas:
 		Global.bateriaAtual -= 2.5
 		Global.piscandoLuzes = false
-		luzes.visible = false
+		luzes.visible = true
 		eventoAcabou.emit()
 		return
 	else:
