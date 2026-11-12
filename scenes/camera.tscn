@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e8vqrmy3g044" path="res://scripts/camera.gd" id="1_tmlye"]
 [ext_resource type="Texture2D" uid="uid://woromjcw3mlr" path="res://resources/mapaCamera.png" id="4_b05li"]
+[ext_resource type="Shader" uid="uid://cx03fqvxu5s4i" path="res://resources/shaders/shaderVHS.gdshader" id="4_gtx3x"]
 [ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="5_p8nh0"]
 
 [sub_resource type="Gradient" id="Gradient_b05li"]
@@ -21,6 +22,17 @@ color_ramp = SubResource("Gradient_b05li")
 seamless = true
 seamless_blend_skirt = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b05li"]
+shader = ExtResource("4_gtx3x")
+shader_parameter/aberration_strength = 0.490000023275
+shader_parameter/blur_strength = 1.130000053675
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.1730000082175
+shader_parameter/distortion_strength = 0.094000004465
+shader_parameter/ghost_strength = 0.0750000035625
+shader_parameter/flicker_strength = 0.005
+
 [node name="camera" type="TextureRect" unique_id=268232031]
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +42,16 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_tmlye")
 expand_mode = 2
 script = ExtResource("1_tmlye")
+
+[node name="VhsShader" type="ColorRect" parent="." unique_id=1147788277]
+z_index = 6
+material = SubResource("ShaderMaterial_b05li")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="espacoCamera" type="Control" parent="." unique_id=137525544]
 layout_mode = 1

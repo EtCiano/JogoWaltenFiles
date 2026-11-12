@@ -6,13 +6,17 @@
 
 [node name="Camera3" unique_id=197646467 instance=ExtResource("1_dl2wy")]
 texture = ExtResource("1_t5l85")
+centro_luz = Vector2(0.48, -0.145)
+raio_luz = 0.1110000052725
+suavidade = 1.10400005244
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=1549141523]
+visible = false
 layout_mode = 0
-offset_left = 76.0
-offset_top = 208.0
-offset_right = 976.0
-offset_bottom = 857.0
+offset_left = 481.0
+offset_top = 111.0
+offset_right = 1381.0
+offset_bottom = 760.0
 texture = ExtResource("3_g5hej")
 expand_mode = 2
 stretch_mode = 5

@@ -5,8 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g6aal"]
 shader = ExtResource("2_y7bwb")
-shader_parameter/centro = Vector2(0.765, 0.06)
-shader_parameter/raio = 0.03600000171
+shader_parameter/centro = Vector2(0.48, -0.145)
+shader_parameter/raio = 0.1110000052725
 shader_parameter/suavidade = 1.10400005244
 shader_parameter/escuridao = 0.85600004066
 shader_parameter/aspecto = 1.777
