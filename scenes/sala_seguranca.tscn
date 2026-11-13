@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boe38oc50lkpn" path="res://resources/escritorio.png" id="1_y27cn"]
 [ext_resource type="Theme" uid="uid://dlbc3f4qxo44f" path="res://themes/doorButtonTheme.tres" id="2_4exue"]
 [ext_resource type="Texture2D" uid="uid://bfal0lppm24fp" path="res://resources/setaCima.png" id="3_p5qe1"]
+[ext_resource type="Texture2D" uid="uid://lhoamap0kqg2" path="res://resources/escritorioFundo.png" id="3_r17ut"]
 [ext_resource type="PackedScene" uid="uid://2ayavrxhvpa1" path="res://scenes/camera.tscn" id="3_x10o6"]
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 [ext_resource type="Script" uid="uid://c1ma5hrwrlyqm" path="res://scripts/camera_2d.gd" id="6_haxg8"]
@@ -41,16 +42,12 @@ texture = ExtResource("1_y27cn")
 stretch_mode = 2
 script = ExtResource("1_w1ner")
 
-[node name="FundoPreto" type="ColorRect" parent="." unique_id=52053580]
-visible = false
-z_index = -4
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="Fundo" type="TextureRect" parent="." unique_id=1540474550]
+z_index = -5
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_r17ut")
 
 [node name="BonDireita" type="TextureRect" parent="." unique_id=695631945]
 visible = false
@@ -291,26 +288,28 @@ script = ExtResource("14_wg1w3")
 [node name="Luzes" type="Node2D" parent="." unique_id=2118569280]
 
 [node name="LuzCentro" type="PointLight2D" parent="Luzes" unique_id=91685557]
-position = Vector2(1438, 241.65997)
-scale = Vector2(1, 1.210904)
+position = Vector2(1438, 204.00002)
+scale = Vector2(1.1796391, 1.210904)
 color = Color(0.7539839, 0.75398386, 0.75398386, 1)
-range_z_min = -2
+range_z_min = -3
 range_z_max = 2
 texture = SubResource("GradientTexture2D_g6aal")
 texture_scale = 20.99
 
 [node name="LuzEsquerda" type="PointLight2D" parent="Luzes" unique_id=1551511957]
-position = Vector2(704, 459)
+position = Vector2(488, 540)
+scale = Vector2(1.4465971, 1.1822876)
 color = Color(0.7539839, 0.75398386, 0.75398386, 1)
-range_z_min = -2
+range_z_min = -3
 range_z_max = 2
 texture = SubResource("GradientTexture2D_g6aal")
 texture_scale = 12.71
 
 [node name="LuzDireita" type="PointLight2D" parent="Luzes" unique_id=206978802]
-position = Vector2(2164, 450)
+position = Vector2(2377, 540.00006)
+scale = Vector2(1.4465971, 1.1822876)
 color = Color(0.7539839, 0.75398386, 0.75398386, 1)
-range_z_min = -2
+range_z_min = -3
 range_z_max = 2
 texture = SubResource("GradientTexture2D_g6aal")
 texture_scale = 12.71
