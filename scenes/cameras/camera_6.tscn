@@ -2,18 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://ctcx2ee4g2ppr" path="res://scenes/cameras/camera_default.tscn" id="1_i61wt"]
 [ext_resource type="Texture2D" uid="uid://cgiku1dao64xp" path="res://resources/cameras/camera6.png" id="1_nj1mj"]
-[ext_resource type="Texture2D" uid="uid://ls1uet2bb4ye" path="res://resources/spritesBon/SpriteBonTeste.png" id="3_2kqv2"]
+[ext_resource type="Texture2D" uid="uid://ck4lvgbq0l3t1" path="res://resources/spritesBon/Bon2.png" id="3_2kqv2"]
 
 [node name="Camera6" unique_id=197646467 instance=ExtResource("1_i61wt")]
 texture = ExtResource("1_nj1mj")
 centro_luz = Vector2(0.8, 0.045)
+raio_luz = 0.035
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=584824356]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 208.0
-offset_right = 976.0
-offset_bottom = 857.0
+offset_left = 910.99994
+offset_top = 326.99997
+offset_right = 1811.0
+offset_bottom = 976.0
+scale = Vector2(1.13, 1.13)
 texture = ExtResource("3_2kqv2")
 expand_mode = 2
 stretch_mode = 5
