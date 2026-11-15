@@ -11,10 +11,9 @@ raio_luz = 0.035
 
 [node name="BonSprite" type="TextureRect" parent="." index="0" unique_id=584824356]
 layout_mode = 0
-offset_left = 910.99994
-offset_top = 326.99997
-offset_right = 1811.0
-offset_bottom = 976.0
+offset_left = 919.99994
+offset_right = 1972.5396
+offset_bottom = 972.5664
 scale = Vector2(1.13, 1.13)
 texture = ExtResource("3_2kqv2")
 expand_mode = 2

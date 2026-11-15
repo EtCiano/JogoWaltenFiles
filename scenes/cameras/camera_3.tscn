@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ctcx2ee4g2ppr" path="res://scenes/cameras/camera_default.tscn" id="1_dl2wy"]
 [ext_resource type="Texture2D" uid="uid://bnpc8bku7svss" path="res://resources/cameras/camera3.png" id="1_t5l85"]
 [ext_resource type="Texture2D" uid="uid://p6jfsv6rsnt0" path="res://resources/spritesBon/Bon3.png" id="3_g5hej"]
+[ext_resource type="Texture2D" uid="uid://bcn75e2pnnu3v" path="res://resources/cameras/detalhes/camera3detalhe.png" id="4_taeva"]
 
 [node name="Camera3" unique_id=197646467 instance=ExtResource("1_dl2wy")]
 texture = ExtResource("1_t5l85")
@@ -14,8 +15,16 @@ suavidade = 1.10400005244
 layout_mode = 0
 offset_left = 481.0
 offset_right = 1428.0
-offset_bottom = 800.0
+offset_bottom = 880.0
 texture = ExtResource("3_g5hej")
 expand_mode = 2
 stretch_mode = 5
 flip_h = true
+
+[node name="mesa" type="TextureRect" parent="." index="1" unique_id=293937782]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 788.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_taeva")

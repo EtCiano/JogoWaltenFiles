@@ -4,12 +4,13 @@ signal bonMudarCamera()
 signal mudarUsoBateria()
 signal eventoEnergiaSignal()
 signal eventoEnergiaAcabouSignal()
+signal jumpscare()
+signal bateriaAcabar()
 
 enum EVENTO_BON {
 	nada,
 	audio,
-	energia,
-	desenho
+	energia
 }
 
 enum ESTADO {
@@ -92,7 +93,6 @@ var continuar = false
 var cameraAberta = false
 
 var piscandoLuzes = false
-
 
 func _ready() -> void:
 	var caminho_pasta = "res://resources/AudiosBon/"
@@ -180,9 +180,8 @@ func mudarPosBon(novaPos) -> void:
 	posicaoBon = novaPos
 	mostrarPosBon()
 	bonMudarCamera.emit()
-
-func matarJogadorBateria() -> void:
-	matarJogador() # temporariamente
+	if posicaoBon == -4:
+		matarJogador()
 
 func executarEvento(evento : EVENTO_BON) -> void:
 	if evento == EVENTO_BON.audio:
@@ -193,7 +192,7 @@ func executarEvento(evento : EVENTO_BON) -> void:
 
 func matarJogador() -> void:
 	continuar = false
-	get_tree().change_scene_to_file("res://scenes/tela_morte.tscn")
+	jumpscare.emit()
 	
 func _eventoEnergiaAcabou() -> void:
 	eventoEnergiaAcabouSignal.emit()

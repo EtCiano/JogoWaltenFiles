@@ -28,7 +28,7 @@ func _on_timeout() -> void:
 	#print("timer bateria: ", contagem)
 	#print("bateria: ", Global.bateriaAtual)
 	if Global.bateriaAtual <= 0:
-		Global.matarJogadorBateria()
+		Global.bateriaAcabar.emit()
 		return
 	else:
 		iniciar()

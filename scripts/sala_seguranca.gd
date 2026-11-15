@@ -32,14 +32,29 @@ var portasConfig = {
 }
 
 func _ready():
+	#_acabarBateria()
+	Global.bateriaAcabar.connect(_acabarBateria)
+	Global.jumpscare.connect(_jumpscare)
 	$Camera2D.ligar_botao($CameraLeftButton, Vector2.LEFT)
 	$Camera2D.ligar_botao($CameraRightButton, Vector2.RIGHT)
 	mudarPorta(Global.LADO.esquerda, Global.portasAbertas[Global.LADO.esquerda])
 	mudarPorta(Global.LADO.direita, Global.portasAbertas[Global.LADO.direita])
 	$UI/HorarioBateria.position += Vector2(50, 25)
 	$CameraLayer/camera.position.y = self.size.y
+	$CameraLayer/camera._on_camera_pressed(Global.cameraAtual)
 	Global.bonMudarCamera.connect(_mudar_camera_bon)
 	#$CameraLayer/camera.custom_maximum_size.x = get_viewport().size.x
+
+func _acabarBateria():
+	Global.piscandoLuzes = true
+	$Luzes.visible = false
+	if Global.cameraAberta:
+		_on_abrir_camera_pressed()
+	_jumpscare()
+
+func _jumpscare():
+	$UI/jumpscare/audio.play()
+	$UI/jumpscare/animacao.play("jumpscare")
 
 func _mudar_camera_bon() -> void:
 	if Global.posicaoBon == Global.LADO.esquerda:
@@ -116,3 +131,7 @@ func _on_abrir_camera_pressed() -> void:
 	tween.parallel().tween_property($CameraLayer/camera, "scale:y", tamanhoAlvo, 0.2)
 	#tween.set_trans(Tween.TRANS_BOUNCE)
 	#await tween.finished
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file("res://scenes/tela_morte.tscn")
