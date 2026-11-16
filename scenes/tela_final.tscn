@@ -1,59 +1,113 @@
 [gd_scene format=3 uid="uid://dxp5hc5hxu11q"]
 
 [ext_resource type="Theme" uid="uid://dwn203124swvh" path="res://themes/cameraButton.tres" id="1_4niyf"]
-[ext_resource type="Theme" uid="uid://c1e3j3qviu5iv" path="res://themes/buttonTheme.tres" id="2_8na46"]
-[ext_resource type="Script" uid="uid://dyjfwwypjtajj" path="res://scripts/start_button.gd" id="3_xwrri"]
+[ext_resource type="PackedScene" uid="uid://clid0dn27ldwt" path="res://scenes/TextoTelaFinal.tscn" id="2_4niyf"]
+[ext_resource type="Texture2D" uid="uid://mf803wq5we6h" path="res://resources/cadeado.png" id="3_8na46"]
 
-[node name="TelaFinal" type="TextureRect" unique_id=1504689435]
+[node name="TelaFinal" type="ColorRect" unique_id=1319930272]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="TextoFinal" type="Label" parent="." unique_id=1592039345]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=290396605]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -350.0
-offset_top = 256.0
-offset_right = 349.9995
-offset_bottom = 356.00012
-grow_horizontal = 2
-theme = ExtResource("1_4niyf")
-text = "Você Ganhou!!!!!
-por enquanto é isso :P"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=478461878]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = 15.0
-offset_right = 350.0
-offset_bottom = 385.0005
+anchor_bottom = 1.0
+offset_left = -787.5
+offset_right = 787.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 29
+horizontal_scroll_mode = 0
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1807026115]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=929039199]
 layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("2_8na46")
-text = "Reiniciar jogo"
-script = ExtResource("3_xwrri")
+size_flags_horizontal = 3
+theme_override_constants/separation = 49
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1830416970]
+[node name="Titulo" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=2001735427]
 layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("2_8na46")
-text = "Sair"
+theme = ExtResource("1_4niyf")
+text = "
+PArabéns por vencer o joguinho (:"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/StartButton" method="_on_quit_button_pressed"]
+[node name="Texto1" parent="ScrollContainer/VBoxContainer" unique_id=1921259415 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "Eu não sei escrever direito, mas queria aproveitar essa tela para agradeçer muito pela amizade que tenho contigo, de verdade
+Eu, escrevendo esse texto dias antes do teu aniversário, consigo ver direitinho tu falando que não merecia um jogo todo pra ti, mas saiba que isso é 100% mentira, eu e todos as pessoas que te conhecem diriam que você merece todos os presentes que recebeu e vai receber ainda.
+"
+
+[node name="Texto2" parent="ScrollContainer/VBoxContainer" unique_id=798178289 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "(mesmo que um jogo seja um presente muito foda, modestia parte)"
+
+[node name="Texto3" parent="ScrollContainer/VBoxContainer" unique_id=529337428 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "Eu lembro nitidamente do dia que tu entrou no nosso circulo de amigos, depois daquele conflito com o grupo da carol, que tu veio perguntar se tu podia ficar no nosso grupo, e eu fiquei muito apreensivo de tu entrar, mas uma semana depois eu ja conversava contigo naturalmente, foi uma das reviravolta mais surpreendentes, e uma das mais importante, até por que, de todas as pessoas que eu conheci no apogeu e que entraram no grupinho, você, eu e a Sophia foram as únicas pessoas que continuaram sendo amigos."
+
+[node name="Texto4" parent="ScrollContainer/VBoxContainer" unique_id=1065004468 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "Eu fiquei com receio de que eu estava exagerando com um JOGO de presente, mas eu começei a pensar em tudo que tu fez pra mim nos quase 3 anos, como você me ajudou na troca de colégio, por que durante os primeiros mêses eu genuinamente não gostava do grupo que eu tava, e se eu não tivesse você pra conversar eu iria ter enloquecido em algumas semanas, e como você me deu uma escultura pra mim de presente esse ano, e eu decidi fazer o jogo. Além disso, também era um desafio pessoal, mas o principal era realmente "
+
+[node name="Texto5" parent="ScrollContainer/VBoxContainer" unique_id=164211281 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "Mas enfim, novamente, muito obrigado por ser uma pessoa tão maravilhosa à 17 anos, e ter sido uma amiga melhor ainda à quase 3 (:
+
+"
+
+[node name="Titulo2" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=130054377]
+layout_mode = 2
+theme = ExtResource("1_4niyf")
+text = "SENHA DO CADEADO:"
+horizontal_alignment = 1
+
+[node name="cadeado" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=345081675]
+custom_maximum_size = Vector2(-1, 865.02)
+layout_mode = 2
+texture = ExtResource("3_8na46")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="0" type="Label" parent="ScrollContainer/VBoxContainer/cadeado" unique_id=368343432]
+layout_mode = 0
+offset_left = 882.5
+offset_top = 433.0
+offset_right = 937.5
+offset_bottom = 533.0
+theme = ExtResource("1_4niyf")
+theme_override_font_sizes/font_size = 71
+text = "0"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="ScrollContainer/VBoxContainer/cadeado" unique_id=1801948596]
+layout_mode = 0
+offset_left = 883.5
+offset_top = 561.0
+offset_right = 938.5
+offset_bottom = 661.0
+theme = ExtResource("1_4niyf")
+theme_override_font_sizes/font_size = 71
+text = "2"
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="ScrollContainer/VBoxContainer/cadeado" unique_id=1923387702]
+layout_mode = 0
+offset_left = 882.5
+offset_top = 689.0
+offset_right = 937.5
+offset_bottom = 789.0
+theme = ExtResource("1_4niyf")
+theme_override_font_sizes/font_size = 71
+text = "3"
+horizontal_alignment = 1
+
+[node name="Texto6" parent="ScrollContainer/VBoxContainer" unique_id=789320658 instance=ExtResource("2_4niyf")]
+layout_mode = 2
+text = "(obs: tu podia não ter feito aniversário no mês do ENEM PUTA QUE PARIU)
+
+"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3kc074lvuadu"
-path="res://.godot/imported/bonBrancoBraco.png-61150cade41fb9996367f68fca33217b.ctex"
+uid="uid://mf803wq5we6h"
+path="res://.godot/imported/cadeado.png-1765a735527b8946ee8d95e5ec42b7a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/spritesBon/bonBrancoBraco.png"
-dest_files=["res://.godot/imported/bonBrancoBraco.png-61150cade41fb9996367f68fca33217b.ctex"]
+source_file="res://resources/cadeado.png"
+dest_files=["res://.godot/imported/cadeado.png-1765a735527b8946ee8d95e5ec42b7a5.ctex"]
 
 [params]
 

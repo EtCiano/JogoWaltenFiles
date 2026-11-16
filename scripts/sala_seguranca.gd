@@ -77,6 +77,7 @@ func _mudar_camera_bon() -> void:
 func _on_fechar_porta(lado: Global.LADO) -> void:
 	var estado_atual = Global.portasAbertas[lado]
 	if !Global.piscandoLuzes:
+		$audioPorta.play()
 		Global.portasAbertas[lado] = (
 			Global.ESTADO.aberto if estado_atual == Global.ESTADO.fechado else Global.ESTADO.fechado
 		)
@@ -114,6 +115,7 @@ func _on_timer_tutorial_timeout() -> void:
 
 
 func _on_abrir_camera_pressed() -> void:
+	$audioCamera.play()
 	var posicaoAlvo: float
 	var tamanhoAlvo: float
 	Global.cameraAberta = !Global.cameraAberta

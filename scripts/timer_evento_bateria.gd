@@ -15,13 +15,13 @@ var luzes: Node2D
 func _ready() -> void:
 	Global.eventoEnergiaSignal.connect(_iniciar)
 	eventoAcabou.connect(Global._eventoEnergiaAcabou)
-	#_iniciar()
 
 func iniciarTimer() -> void:
 	start(randf_range(tempoMin, tempoMax))
 	print(time_left)
 
 func _iniciar() -> void:
+	get_node("../../audioLuzes").play()
 	Global.piscandoLuzes = true
 	
 	for cameraAntiga in get_node("../../CameraLayer/camera/espacoCamera").get_children():
@@ -40,6 +40,7 @@ func _on_timeout() -> void:
 		Global.bateriaAtual -= 2.5
 		Global.piscandoLuzes = false
 		luzes.visible = true
+		get_node("../../audioLuzes").stop()
 		eventoAcabou.emit()
 		return
 	else:

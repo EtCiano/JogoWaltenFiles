@@ -17,6 +17,10 @@
 [ext_resource type="AudioStream" uid="uid://chk2rjefx5idx" path="res://resources/spritesBon/audioJumpscare.mp3" id="11_hi5pd"]
 [ext_resource type="Script" uid="uid://dt3uemp8bpnnd" path="res://scripts/bateria_container.gd" id="11_ocrui"]
 [ext_resource type="Script" uid="uid://ccvs3lc40ollx" path="res://scripts/timer_evento_bateria.gd" id="14_wg1w3"]
+[ext_resource type="AudioStream" uid="uid://b1yqt3akto8c4" path="res://resources/audios/porta.mp3" id="18_hi5pd"]
+[ext_resource type="AudioStream" uid="uid://33g8y24ovqt8" path="res://resources/audios/audioAmbiente.mp3" id="19_bsjt7"]
+[ext_resource type="AudioStream" uid="uid://b2pf42dua8ir4" path="res://resources/audios/audioLuzes.ogg" id="19_iphj5"]
+[ext_resource type="AudioStream" uid="uid://dgify20b4ky6e" path="res://resources/audios/audioCamera.mp3" id="19_nlgm4"]
 
 [sub_resource type="Gradient" id="Gradient_r17ut"]
 offsets = PackedFloat32Array(1)
@@ -285,7 +289,9 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="audio" type="AudioStreamPlayer2D" parent="UI/jumpscare" unique_id=986584061]
+position = Vector2(960, -540)
 stream = ExtResource("11_hi5pd")
+volume_db = 8.0
 
 [node name="animacao" type="AnimationPlayer" parent="UI/jumpscare" unique_id=2133178579]
 libraries/ = SubResource("AnimationLibrary_iphj5")
@@ -367,6 +373,26 @@ color = Color(0.11858135, 0.11858139, 0.11858138, 1)
 [node name="TimerEventoBateria" type="Timer" parent="Escuro" unique_id=1632474376]
 one_shot = true
 script = ExtResource("14_wg1w3")
+
+[node name="audioPorta" type="AudioStreamPlayer2D" parent="." unique_id=983742129]
+position = Vector2(1440, 540)
+stream = ExtResource("18_hi5pd")
+volume_db = 12.0
+
+[node name="audioAmbiente" type="AudioStreamPlayer2D" parent="." unique_id=1144070911]
+position = Vector2(1440, 540)
+stream = ExtResource("19_bsjt7")
+autoplay = true
+
+[node name="audioCamera" type="AudioStreamPlayer2D" parent="." unique_id=1850060719]
+position = Vector2(1440, 540)
+stream = ExtResource("19_nlgm4")
+volume_db = 12.0
+
+[node name="audioLuzes" type="AudioStreamPlayer2D" parent="." unique_id=929361120]
+position = Vector2(1440, 540)
+stream = ExtResource("19_iphj5")
+volume_db = 12.0
 
 [node name="Luzes" type="Node2D" parent="." unique_id=2118569280]
 
