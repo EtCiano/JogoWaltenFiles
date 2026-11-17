@@ -3,7 +3,7 @@ extends TextureRect
 @export var centro_luz := Vector2(0.9, 0.2)
 @export var raio_luz := 0.3
 @export var suavidade := 0.387
-@export var escuridao := 0.85
+@export var escuridao := 0.753
 @export var aspecto := 1.777
 
 func _ready() -> void:

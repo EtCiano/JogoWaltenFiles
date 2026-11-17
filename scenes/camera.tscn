@@ -28,10 +28,10 @@ shader_parameter/aberration_strength = 0.490000023275
 shader_parameter/blur_strength = 1.130000053675
 shader_parameter/noise_strength = 0.048
 shader_parameter/vignette_strength = 0.78
-shader_parameter/scanline_strength = 0.05400000256499999
-shader_parameter/distortion_strength = 0.094000004465
-shader_parameter/ghost_strength = 0.0750000035625
-shader_parameter/flicker_strength = 0.005
+shader_parameter/scanline_strength = 0.10400000494
+shader_parameter/distortion_strength = 0.08800000418
+shader_parameter/ghost_strength = 0.08400000399
+shader_parameter/flicker_strength = 0.0
 
 [node name="camera" type="TextureRect" unique_id=268232031]
 anchors_preset = 15

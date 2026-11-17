@@ -7,8 +7,8 @@
 shader = ExtResource("2_y7bwb")
 shader_parameter/centro = Vector2(0.905, 0.38)
 shader_parameter/raio = 0.126000005985
-shader_parameter/suavidade = 1.6970000806074999
-shader_parameter/escuridao = 0.8350000396625
+shader_parameter/suavidade = 1.6970000806075
+shader_parameter/escuridao = 0.7530000357675
 shader_parameter/aspecto = 2.702
 
 [node name="CameraDefault" type="TextureRect" unique_id=197646467]

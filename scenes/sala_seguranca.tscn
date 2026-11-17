@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfal0lppm24fp" path="res://resources/setaCima.png" id="3_p5qe1"]
 [ext_resource type="Texture2D" uid="uid://lhoamap0kqg2" path="res://resources/escritorioFundo.png" id="3_r17ut"]
 [ext_resource type="PackedScene" uid="uid://2ayavrxhvpa1" path="res://scenes/camera.tscn" id="3_x10o6"]
+[ext_resource type="Texture2D" uid="uid://1o8clfw6d72v" path="res://resources/spritesBon/bon8.png" id="4_00wv5"]
 [ext_resource type="PackedScene" uid="uid://cqunskemhl55i" path="res://scenes/horario_label.tscn" id="4_vvx3o"]
 [ext_resource type="Texture2D" uid="uid://p6jfsv6rsnt0" path="res://resources/spritesBon/Bon3.png" id="5_k0x4v"]
 [ext_resource type="Script" uid="uid://c1ma5hrwrlyqm" path="res://scripts/camera_2d.gd" id="6_haxg8"]
@@ -121,13 +122,16 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -531.0
-offset_top = -260.0
-offset_right = 78.0
-offset_bottom = 463.0
+offset_left = -870.0
+offset_top = -169.0
+offset_right = -558.0
+offset_bottom = 9.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("5_k0x4v")
+texture = ExtResource("4_00wv5")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
 
 [node name="BonEsquerda" type="TextureRect" parent="." unique_id=283304711]
 visible = false
@@ -138,13 +142,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -2880.0
-offset_top = -260.0
-offset_right = -2271.0
-offset_bottom = 463.0
+offset_left = -2311.0
+offset_top = -169.0
+offset_right = -2001.5
+offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("5_k0x4v")
+texture = ExtResource("4_00wv5")
+expand_mode = 2
+stretch_mode = 5
 flip_h = true
 
 [node name="BonCentro" type="TextureRect" parent="." unique_id=157092538]
