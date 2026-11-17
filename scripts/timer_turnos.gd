@@ -20,8 +20,7 @@ func _on_timeout() -> void:
 		tempoAcrescimo = randi_range(-acrescimoTotal, acrescimoTotal)
 		
 		randomize()
-		
-		var eventoSorteado = Global.EVENTO_BON[Global.EVENTO_BON.keys().pick_random()]
+		var eventoSorteado = Global.EVENTO_BON[Global.escolher_ponderado(Global.EVENTO_BON.keys(), Global.pesosEvento)]
 		#var eventoSorteado = Global.EVENTO_BON.energia
 		print("evento: ", Global.EVENTO_BON.find_key(eventoSorteado))
 		if eventoSorteado != Global.EVENTO_BON.nada:

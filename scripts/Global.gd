@@ -13,6 +13,8 @@ enum EVENTO_BON {
 	energia
 }
 
+var pesosEvento = [3, 2, 1]
+
 enum ESTADO {
 	aberto, 
 	fechado 

@@ -42,6 +42,7 @@ func _on_timeout() -> void:
 		Global.piscandoLuzes = false
 		luzes.visible = true
 		get_node("../../audioLuzes").stop()
+		count = 0
 		eventoAcabou.emit()
 		return
 	else:
