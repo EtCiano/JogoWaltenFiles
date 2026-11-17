@@ -69,7 +69,7 @@ const cameras = {
 	8: preload("res://scenes/cameras/camera_8.tscn")
 }
 
-var audios: Array[AudioStream]
+var caminhos_audios: Array[String] = []
 
 const poses = {
 	1: [],
@@ -108,11 +108,7 @@ func _ready() -> void:
 		while nome_arquivo != "":
 			if not dir.current_is_dir():
 				if nome_arquivo.ends_with(".mp3"):
-					var caminho_completo = caminho_pasta + nome_arquivo
-					var audio_carregado = load(caminho_completo)
-					
-					if audio_carregado:
-						audios.append(audio_carregado)
+					caminhos_audios.append(caminho_pasta + nome_arquivo)
 						
 			nome_arquivo = dir.get_next()
 		dir.list_dir_end()
@@ -161,6 +157,10 @@ func iniciar_jogo() -> void:
 	get_tree().change_scene_to_file("res://scenes/sala_seguranca.tscn")
 	mostrarPosBon()
 	continuar = true
+	cameraAtual = 8
+	gastoBateria = 1
+	posicaoBon = 8
+	posicaoAnteriorBon = 8
 	
 	TimerNoite.horasPassadas = 0
 	TimerNoite.iniciar()
@@ -185,8 +185,12 @@ func mudarPosBon(novaPos) -> void:
 
 func executarEvento(evento : EVENTO_BON) -> void:
 	if evento == EVENTO_BON.audio:
-		AudioLoader.stream = audios.pick_random()
-		AudioLoader.play()
+		if caminhos_audios.size() > 0:
+			var caminho = caminhos_audios.pick_random()
+			var audio = load(caminho)
+			if audio:
+				AudioLoader.stream = audio
+				AudioLoader.play()
 	if evento == EVENTO_BON.energia:
 		eventoEnergiaSignal.emit()
 

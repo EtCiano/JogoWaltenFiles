@@ -13,6 +13,7 @@ var count: int = 0
 var luzes: Node2D
 
 func _ready() -> void:
+	_iniciar()
 	Global.eventoEnergiaSignal.connect(_iniciar)
 	eventoAcabou.connect(Global._eventoEnergiaAcabou)
 

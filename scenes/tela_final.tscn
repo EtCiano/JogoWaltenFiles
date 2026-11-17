@@ -22,6 +22,7 @@ offset_left = -787.5
 offset_right = 787.5
 grow_horizontal = 2
 grow_vertical = 2
+scroll_vertical = 2453
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=929039199]
@@ -38,7 +39,7 @@ horizontal_alignment = 1
 
 [node name="Texto1" parent="ScrollContainer/VBoxContainer" unique_id=1921259415 instance=ExtResource("2_4niyf")]
 layout_mode = 2
-text = "Eu não sei escrever direito, mas queria aproveitar essa tela para agradeçer muito pela amizade que tenho contigo, de verdade
+text = "Eu não sei fazer textão emocionante, mas queria aproveitar essa tela para agradeçer muito pela amizade que tenho contigo, de verdade
 Eu, escrevendo esse texto dias antes do teu aniversário, consigo ver direitinho tu falando que não merecia um jogo todo pra ti, mas saiba que isso é 100% mentira, eu e todos as pessoas que te conhecem diriam que você merece todos os presentes que recebeu e vai receber ainda.
 "
 
@@ -48,11 +49,11 @@ text = "(mesmo que um jogo seja um presente muito foda, modestia parte)"
 
 [node name="Texto3" parent="ScrollContainer/VBoxContainer" unique_id=529337428 instance=ExtResource("2_4niyf")]
 layout_mode = 2
-text = "Eu lembro nitidamente do dia que tu entrou no nosso circulo de amigos, depois daquele conflito com o grupo da carol, que tu veio perguntar se tu podia ficar no nosso grupo, e eu fiquei muito apreensivo de tu entrar, mas uma semana depois eu ja conversava contigo naturalmente, foi uma das reviravolta mais surpreendentes, e uma das mais importante, até por que, de todas as pessoas que eu conheci no apogeu e que entraram no grupinho, você, eu e a Sophia foram as únicas pessoas que continuaram sendo amigos."
+text = "Eu lembro nitidamente do dia que tu entrou no nosso circulo de amigos, depois daquele conflito com o grupo da carol, que tu veio perguntar se tu podia ficar no nosso grupo, e eu fiquei muito apreensivo de tu entrar, mas uma semana depois eu ja conversava contigo naturalmente, foi uma das reviravolta mais surpreendentes, e uma das mais importantes, até por que, de todas as pessoas que eu conheci no apogeu e que entraram no grupinho, você, eu e a Sophia foram as únicas pessoas que continuaram sendo amigos."
 
 [node name="Texto4" parent="ScrollContainer/VBoxContainer" unique_id=1065004468 instance=ExtResource("2_4niyf")]
 layout_mode = 2
-text = "Eu fiquei com receio de que eu estava exagerando com um JOGO de presente, mas eu começei a pensar em tudo que tu fez pra mim nos quase 3 anos, como você me ajudou na troca de colégio, por que durante os primeiros mêses eu genuinamente não gostava do grupo que eu tava, e se eu não tivesse você pra conversar eu iria ter enloquecido em algumas semanas, e como você me deu uma escultura pra mim de presente esse ano, e eu decidi fazer o jogo. Além disso, também era um desafio pessoal, mas o principal era realmente "
+text = "Eu fiquei com receio de que eu estava exagerando com um JOGO de presente, mas eu começei a pensar em tudo que tu fez pra mim nos quase 3 anos, como você me ajudou na troca de colégio, por que durante os primeiros mêses eu genuinamente não gostava do grupo que eu tava, e se eu não tivesse você pra conversar eu iria ter enloquecido em algumas semanas, e como você me deu uma escultura pra mim de presente esse ano, e eu decidi que você realmente merecia. "
 
 [node name="Texto5" parent="ScrollContainer/VBoxContainer" unique_id=164211281 instance=ExtResource("2_4niyf")]
 layout_mode = 2
@@ -108,6 +109,7 @@ horizontal_alignment = 1
 
 [node name="Texto6" parent="ScrollContainer/VBoxContainer" unique_id=789320658 instance=ExtResource("2_4niyf")]
 layout_mode = 2
-text = "(obs: tu podia não ter feito aniversário no mês do ENEM PUTA QUE PARIU)
+text = "(obs: tu podia não ter feito aniversário no mês do ENEM 😭😭😭 q trabalho da porra)
+
 
 "
